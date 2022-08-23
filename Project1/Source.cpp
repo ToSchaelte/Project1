@@ -44,7 +44,7 @@ void test2() {
 	cout << "Oktal : " << oct << number << endl;
 	cout << "Hexadezimal: " << hex << number << endl;
 
-	cout << setw(10) << setfill('#') << "Hallo" << endl;
+	cout << setw(10) << "Hello World das wird eh nicht mehr angezeigt" << endl;
 	cout << setw(10) << setfill('#') << left << "Hallo" << endl;
 	cout << setprecision(3) << 1.95583 << endl;
 }
