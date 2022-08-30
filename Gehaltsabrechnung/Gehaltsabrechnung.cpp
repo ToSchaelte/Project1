@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <limits>
 using namespace std;
 
 const int length = 50;
@@ -31,10 +32,12 @@ double readValue(string text)
         if (cin.fail())
         {
             cin.clear();
-            cin.ignore();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
         printPrompt(text);
+
         cin >> input;
+        cout << input << endl;
     } while (cin.fail());
     return input;
 }
@@ -75,6 +78,7 @@ int main(){
     printLabelValuePair("Rentenversicherung:", rentenversicherung);
     printLabelValuePair("Arbeitslosenversicherung:", arbeitslosenversicherung);
     printLabelValuePair("Sozialversicherungsrechtliche Abzuege (gesamt):", sozialversicherungsrechtlicheAbzuege);
+    cout << endl;
 
     printLabelValuePair("Netto Verdienst:", nettogehalt_monatl);
 }
