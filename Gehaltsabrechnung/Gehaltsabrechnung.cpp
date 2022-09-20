@@ -7,7 +7,7 @@ const int length = 50;
 const char filler = ' ';
 const int doublePrecision = 2;
 const int maxDoubleLength = 10;
-const  string unit = "EUR";
+const string unit = "EUR";
 
 const double anteilSozialversicherung_arbeitnehmer = 0.5;
 const double anteilSozialversicherung_arbeitgeber = 1 - anteilSozialversicherung_arbeitnehmer;
@@ -54,10 +54,10 @@ int main(){
     double kirchensteuer                        = lohnsteuer * 0.09;
     double steuerrechtlicheAbzuege              = lohnsteuer + kirchensteuer;
 
-    double krankenversicherung                  = bruttogehalt_monatl * abgabesatz_kv / 100 * anteilSozialversicherung_arbeitnehmer;
-    double pflegeversicherung                   = bruttogehalt_monatl * abgabesatz_pv / 100 * anteilSozialversicherung_arbeitnehmer;
-    double rentenversicherung                   = bruttogehalt_monatl * abgabesatz_rv / 100 * anteilSozialversicherung_arbeitnehmer;
-    double arbeitslosenversicherung             = bruttogehalt_monatl * abgabesatz_av / 100 * anteilSozialversicherung_arbeitnehmer;
+    double krankenversicherung                  = bruttogehalt_monatl * (abgabesatz_kv / 100) * anteilSozialversicherung_arbeitnehmer;
+    double pflegeversicherung                   = bruttogehalt_monatl * (abgabesatz_pv / 100) * anteilSozialversicherung_arbeitnehmer;
+    double rentenversicherung                   = bruttogehalt_monatl * (abgabesatz_rv / 100) * anteilSozialversicherung_arbeitnehmer;
+    double arbeitslosenversicherung             = bruttogehalt_monatl * (abgabesatz_av / 100) * anteilSozialversicherung_arbeitnehmer;
     double sozialversicherungsrechtlicheAbzuege = krankenversicherung + pflegeversicherung + rentenversicherung + arbeitslosenversicherung;
 
     double nettogehalt_monatl                   = bruttogehalt_monatl - steuerrechtlicheAbzuege - sozialversicherungsrechtlicheAbzuege;
