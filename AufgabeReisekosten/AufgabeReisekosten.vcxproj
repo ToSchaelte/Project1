@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{44f52b55-8525-48a0-8350-960e5c783831}</ProjectGuid>
-    <RootNamespace>Aufgabe52Seite222</RootNamespace>
+    <ProjectGuid>{f9ef6cc8-f9eb-46f4-a21f-c2e93f99a2f3}</ProjectGuid>
+    <RootNamespace>AufgabeReisekosten</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,11 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Aufgabe5.2_Seite222.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Aufgabe5.2_Seite222.nsd" />
-    <None Include="Aufgabe5.pap" />
+    <ClCompile Include="AufgabeReisekosten.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

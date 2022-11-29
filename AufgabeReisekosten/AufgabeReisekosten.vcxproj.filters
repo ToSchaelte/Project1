@@ -15,12 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Aufgabe5.2_Seite222.cpp">
+    <ClCompile Include="AufgabeReisekosten.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Aufgabe5.2_Seite222.nsd" />
-    <None Include="Aufgabe5.pap" />
   </ItemGroup>
 </Project>

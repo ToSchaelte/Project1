@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{44f52b55-8525-48a0-8350-960e5c783831}</ProjectGuid>
-    <RootNamespace>Aufgabe52Seite222</RootNamespace>
+    <ProjectGuid>{6860f507-8053-4e9a-8587-f911925c5f48}</ProjectGuid>
+    <RootNamespace>Zinseszins</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,11 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Aufgabe5.2_Seite222.cpp" />
+    <ClCompile Include="Zinseszins.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Aufgabe5.2_Seite222.nsd" />
-    <None Include="Aufgabe5.pap" />
+    <None Include="Zinseszins.pap" />
+    <None Include="Zinseszins.xlsx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

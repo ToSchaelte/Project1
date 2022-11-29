@@ -15,12 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Aufgabe5.2_Seite222.cpp">
+    <ClCompile Include="Zinseszins.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Aufgabe5.2_Seite222.nsd" />
-    <None Include="Aufgabe5.pap" />
+    <None Include="Zinseszins.pap">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Zinseszins.xlsx">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
