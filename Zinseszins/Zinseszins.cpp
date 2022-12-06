@@ -12,9 +12,11 @@ int main()
 
     cin >> kapital >> zinssatz >> laufzeit;
 
-    for (int i = 0; i < laufzeit; ++i)
+    double zinssatzAsDecimal = zinssatz / 100;
+
+    for (int year = 1; year <= laufzeit; ++year)
     {
-        kapital += kapital * zinssatz / 100;
+        kapital += kapital * zinssatzAsDecimal;
     }
 
     cout << "Ihr kapital am Ende der Laufzeit beträgt: " << kapital << endl;
