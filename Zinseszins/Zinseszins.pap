@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FRAME GUID="2FB25471-B62C-4EE6-BD43-F819C095ACF8" FORMAT="0000" APP_VERSION="2.2.0.8" CHECKSUM="3DDAB96D5181D6F5">
-  <PROJECT FORMAT="1.00" NAME="Zinseszins" AUTHOR="Tobias.Schaelte" CREATED="2022.11.29 11:02:25" MODIFIED="2022.12.06 11:58:55">
+<FRAME GUID="2FB25471-B62C-4EE6-BD43-F819C095ACF8" FORMAT="0000" APP_VERSION="2.2.0.8" CHECKSUM="4C563C217A07FFCE">
+  <PROJECT FORMAT="1.00" NAME="Zinseszins" AUTHOR="Tobias.Schaelte" CREATED="2022.11.29 11:02:25" MODIFIED="2022.12.06 12:09:05">
     <DIAGRAMS>
-      <DIAGRAM FORMAT="1.00" ID="0" NAME="Hauptprogramm 1" CREATED="2022.11.29 11:02:32" MODIFIED="2022.12.06 11:58:55">
+      <DIAGRAM FORMAT="1.00" ID="0" NAME="Hauptprogramm 1" CREATED="2022.11.29 11:02:32" MODIFIED="2022.12.06 12:09:05">
         <LAYOUT FORMAT="1.00" COLUMNS="1" ROWS="11">
           <ENTRIES>
             <ENTRY COLUMN="0" ROW="0" ANCHOR="True">
@@ -37,7 +37,7 @@
             </ENTRY>
             <ENTRY COLUMN="0" ROW="6">
               <FIGURE SUBTYPE="PapLoopStart" FORMAT="1.00" ID="10" ASSOCIATE="12">
-                <TEXT><![CDATA[Laufvariable i = 0; solange i < laufzeit; i := i+1]]></TEXT>
+                <TEXT><![CDATA[Laufvariable int i = 0; solange i < laufzeit; i := i+1]]></TEXT>
               </FIGURE>
             </ENTRY>
             <ENTRY COLUMN="0" ROW="7">
