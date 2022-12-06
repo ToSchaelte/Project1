@@ -11,12 +11,7 @@ int main()
 
 	for (int i = 1; i <= maxValue; ++i)
 	{
-		std::cout << i;
-
-		if (i != maxValue)
-		{
-			std::cout << ", ";
-		}
+		std::cout << i << (i == maxValue ? "" : ", ");
 	}
 
 	std::cout << std::endl << std::endl;
@@ -33,11 +28,7 @@ int main()
 	{
 		if (i % 2 == 0)
 		{
-			std::cout << i;
-			if (i != 2)
-			{
-				std::cout << ", ";
-			}
+			std::cout << i << (i == 2 ? "" : ", ");
 		}
 	}
 
@@ -46,7 +37,7 @@ int main()
 
 
 
-	// 3
+	// 3 v1
 
 	for (int i = 1; i <= 19; ++i)
 	{
@@ -64,4 +55,20 @@ int main()
 			std::cout << ", ";
 		}
 	}
+
+	std::cout << std::endl << std::endl;
+
+
+
+	// 3 v2
+
+	for (int i = -9; i <= 9; ++i)
+	{
+		if (i <= 10)
+		{
+			std::cout << 10 - (i < 0 ? -i : i) << (i == 9 ? "" : ", ");
+		}
+	}
+
+	std::cout << std::endl << std::endl;
 }
