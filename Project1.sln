@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Aufgabe5.4", "Aufgabe5.4\Au
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Aufgabe5.6", "Aufgabe5.6\Aufgabe5.6.vcxproj", "{14EAFBED-C197-4E69-82A1-508AFACF58A9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChristmasTree", "ChristmasTree\ChristmasTree.vcxproj", "{A75185D0-158E-4126-92EC-8CDB2F53F841}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -111,6 +113,14 @@ Global
 		{14EAFBED-C197-4E69-82A1-508AFACF58A9}.Release|x64.Build.0 = Release|x64
 		{14EAFBED-C197-4E69-82A1-508AFACF58A9}.Release|x86.ActiveCfg = Release|Win32
 		{14EAFBED-C197-4E69-82A1-508AFACF58A9}.Release|x86.Build.0 = Release|Win32
+		{A75185D0-158E-4126-92EC-8CDB2F53F841}.Debug|x64.ActiveCfg = Debug|x64
+		{A75185D0-158E-4126-92EC-8CDB2F53F841}.Debug|x64.Build.0 = Debug|x64
+		{A75185D0-158E-4126-92EC-8CDB2F53F841}.Debug|x86.ActiveCfg = Debug|Win32
+		{A75185D0-158E-4126-92EC-8CDB2F53F841}.Debug|x86.Build.0 = Debug|Win32
+		{A75185D0-158E-4126-92EC-8CDB2F53F841}.Release|x64.ActiveCfg = Release|x64
+		{A75185D0-158E-4126-92EC-8CDB2F53F841}.Release|x64.Build.0 = Release|x64
+		{A75185D0-158E-4126-92EC-8CDB2F53F841}.Release|x86.ActiveCfg = Release|Win32
+		{A75185D0-158E-4126-92EC-8CDB2F53F841}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
