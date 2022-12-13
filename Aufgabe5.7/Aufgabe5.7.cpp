@@ -77,27 +77,16 @@ int main()
 												continue;
 											}
 
-											if (top_left / top_mid == top_right)
+											if (	top_left	/ top_mid		== top_right
+												&&	mid_left	- mid_mid		== mid_right
+												&&	bottom_left - bottom_mid	== bottom_right
+												&&	top_left	- mid_left		== bottom_left
+												&&	top_mid		+ mid_mid		== bottom_mid
+												&&	top_right	* mid_right		== bottom_right)
 											{
-												if (mid_left - mid_mid == mid_right)
-												{
-													if (bottom_left - bottom_mid == bottom_right)
-													{
-														if (top_left - mid_left == bottom_left)
-														{
-															if (top_mid + mid_mid == bottom_mid)
-															{
-																if (top_right * mid_right == bottom_right)
-																{
-																	cout << "a = " << a << ", b = " << b << ", c = " << c << ", d = "
-																		<< d << ", e = " << e << ", f = " << f << ", g = " << g << ", h = "
-																		<< h << ", i = " << i << ", j = " << j << endl;
-																}
-															}
-														}
-													}
-												}
-												
+												cout << "a = " << a << ", b = " << b << ", c = " << c << ", d = "
+													<< d << ", e = " << e << ", f = " << f << ", g = " << g << ", h = "
+													<< h << ", i = " << i << ", j = " << j << endl;				
 											}
 										}
 									}
