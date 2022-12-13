@@ -32,11 +32,13 @@ int main()
 		}
 	}
 
-	for (int j = 0; j < 2; ++j)
+	for (int j = 0; j < 4; ++j)
 	{
-		printTreeRow(10);
+		printTreeRow(9);
 	}
 
-	printTreeRow(8);
-	printTreeRow(6);
+	for (int i = 8; i >= 4; i -= 2)
+	{
+		printTreeRow(i);
+	}
 }
