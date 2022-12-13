@@ -1,8 +1,8 @@
 #include <iostream>
 
-void printTreeRow(int minValue)
+void printTreeRow(int minValue, int maxValue)
 {
-	for (int i = 0; i < 10; ++i)
+	for (int i = 0; i < maxValue; ++i)
 	{
 		if (i >= minValue)
 		{
@@ -10,10 +10,18 @@ void printTreeRow(int minValue)
 		}
 		else
 		{
+			if ((double)i / 10 >= 1)
+			{
+				std::cout << " ";
+			}
+			if ((double)i / 100 >= 1)
+			{
+				std::cout << " ";
+			}
 			std::cout << "  ";
 		}
 	}
-	for (int i = 10; i >= minValue; --i)
+	for (int i = maxValue; i >= minValue; --i)
 	{
 		std::cout << i << " ";
 	}
@@ -22,23 +30,28 @@ void printTreeRow(int minValue)
 
 int main()
 {
-	printTreeRow(10);
+	int maxValue = 10;
+	int stretchFactor = maxValue / 5;
+	int stamWidth = maxValue - maxValue / 7;
+	int stamHeight = maxValue / 2 -maxValue / 10;
 
-	for (int minValue = 9; minValue >= 0; --minValue)
+	printTreeRow(maxValue, maxValue);
+
+	for (int minValue = maxValue-1; minValue >= 0; --minValue)
 	{
-		for (int j = 0; j < 2; ++j)
+		for (int j = 0; j < stretchFactor; ++j)
 		{
-			printTreeRow(minValue);
+			printTreeRow(minValue, maxValue);
 		}
 	}
 
-	for (int j = 0; j < 4; ++j)
+	for (int j = 0; j < stamHeight; ++j)
 	{
-		printTreeRow(9);
+		printTreeRow(stamWidth, maxValue);
 	}
 
-	for (int i = 8; i >= 4; i -= 2)
+	for (int i = maxValue*0.8; i >= 4; i -= 2)
 	{
-		printTreeRow(i);
+		printTreeRow(i, maxValue);
 	}
 }
