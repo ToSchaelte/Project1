@@ -30,10 +30,10 @@ void printTreeRow(int minValue, int maxValue)
 
 int main()
 {
-	int maxValue = 10;
+	int maxValue = 42;
 	int stretchFactor = maxValue / 5;
-	int stamWidth = maxValue - maxValue / 7;
-	int stamHeight = maxValue / 2 -maxValue / 10;
+	int stemWidth = maxValue - maxValue / 7;
+	int stemHeight = maxValue / 2 - maxValue / 10;
 
 	printTreeRow(maxValue, maxValue);
 
@@ -45,9 +45,9 @@ int main()
 		}
 	}
 
-	for (int j = 0; j < stamHeight; ++j)
+	for (int j = 0; j < stemHeight; ++j)
 	{
-		printTreeRow(stamWidth, maxValue);
+		printTreeRow(stemWidth, maxValue);
 	}
 
 	for (int i = maxValue*0.8; i >= 4; i -= 2)
