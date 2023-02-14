@@ -4,9 +4,13 @@
 int main()
 {
 	std::cout << "Aufgabe 1: " << eingabe(69) << std::endl;
-	std::cout << std::endl << "Aufgabe 2: ";
+	system("pause");
+	system("cls");
+	std::cout << "Aufgabe 2: ";
 	zahlenausgabe(69);
-	std::cout << std::endl << "Aufgabe 3: " << fakultaet(15) << std::endl;
+	system("pause");
+	system("cls");
+	std::cout << "Aufgabe 3: " << fakultaet(15) << std::endl;
 }
 
 int eingabe(int zahl)
