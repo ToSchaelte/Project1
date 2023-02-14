@@ -29,6 +29,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OffeneSchleifen", "OffeneSc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OffeneSchleifen2", "OffeneSchleifen2\OffeneSchleife2.vcxproj", "{C88529BD-617C-4C00-A391-704229587B97}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Aufgabe6.2", "Aufgabe6.2\Aufgabe6.2.vcxproj", "{5D40A2DA-9E61-450A-9833-659FDB10AB8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -141,6 +143,14 @@ Global
 		{C88529BD-617C-4C00-A391-704229587B97}.Release|x64.Build.0 = Release|x64
 		{C88529BD-617C-4C00-A391-704229587B97}.Release|x86.ActiveCfg = Release|Win32
 		{C88529BD-617C-4C00-A391-704229587B97}.Release|x86.Build.0 = Release|Win32
+		{5D40A2DA-9E61-450A-9833-659FDB10AB8D}.Debug|x64.ActiveCfg = Debug|x64
+		{5D40A2DA-9E61-450A-9833-659FDB10AB8D}.Debug|x64.Build.0 = Debug|x64
+		{5D40A2DA-9E61-450A-9833-659FDB10AB8D}.Debug|x86.ActiveCfg = Debug|Win32
+		{5D40A2DA-9E61-450A-9833-659FDB10AB8D}.Debug|x86.Build.0 = Debug|Win32
+		{5D40A2DA-9E61-450A-9833-659FDB10AB8D}.Release|x64.ActiveCfg = Release|x64
+		{5D40A2DA-9E61-450A-9833-659FDB10AB8D}.Release|x64.Build.0 = Release|x64
+		{5D40A2DA-9E61-450A-9833-659FDB10AB8D}.Release|x86.ActiveCfg = Release|Win32
+		{5D40A2DA-9E61-450A-9833-659FDB10AB8D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
