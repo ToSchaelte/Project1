@@ -2,4 +2,4 @@
 
 int eingabe(int zahl);
 void zahlenausgabe(int zahl);
-int fakultaet(int zahl);
+unsigned long long fakultaet(int zahl);

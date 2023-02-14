@@ -6,7 +6,7 @@ int main()
 	std::cout << "Aufgabe 1: " << eingabe(69) << std::endl;
 	std::cout << std::endl << "Aufgabe 2: ";
 	zahlenausgabe(69);
-	std::cout << std::endl << "Aufgabe 3: " << fakultaet(5) << std::endl;
+	std::cout << std::endl << "Aufgabe 3: " << fakultaet(15) << std::endl;
 }
 
 int eingabe(int zahl)
@@ -20,9 +20,9 @@ void zahlenausgabe(int zahl)
 	std::cout << zahl << std::endl;
 }
 
-int fakultaet(int zahl)
+unsigned long long fakultaet(int zahl)
 {
-	int fak = 1;
+	unsigned long long fak = 1;
 	for (int i = 1; i <= zahl; ++i) fak *= i;
 	return fak;
 }
