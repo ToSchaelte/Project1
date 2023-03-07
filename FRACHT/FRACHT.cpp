@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    map<string, double> angaben;
+    map<key, double> angaben;
     const int produkteProKarton = 12;
     const double preisProkarton = 7.85;
     const double frachtPro100Km = 0.06;
@@ -15,19 +15,19 @@ int main()
         cout << "Programm: Frachtberechnung" << endl
             << "==========================" << endl << endl << endl;
 
-        cout << "Kartons: ";
-        cin >> angaben["kartons"];
-        if (angaben["kartons"] <= 0) break;
-        cout << "Kilometer: ";
-        cin >> angaben["kilometer"];
+        print("Anzahl Kartons", "", false);
+        cin >> angaben[ANZAHL_KARTONS];
+        if (angaben[ANZAHL_KARTONS] <= 0) break;
+        print("Anzahl Kilometer", "", false);
+        cin >> angaben[ANZAHL_KILOMETER];
 
-        angaben["gewicht"] = angaben["kartons"] * 24;
-        angaben["berechnetesGewicht"] = calculateBerechnetesGewicht(angaben["gewicht"]);
-        angaben["fracht"] = angaben["kilometer"] * (angaben["berechnetesGewicht"]/100) * frachtPro100Km;
-        angaben["nettoumsatz"] = angaben["kartons"] * produkteProKarton * preisProkarton;
-        angaben["gesamtumsatz"] = angaben["fracht"] + angaben["nettoumsatz"];
-        angaben["rabatt"] = calculateRabatt(angaben["nettoumsatz"]);
-        angaben["zielpreis"] = angaben["gesamtumsatz"] - angaben["rabatt"];
+        angaben[GEWICHT] = angaben[ANZAHL_KARTONS] * 24;
+        angaben[BERECHNETES_GEWICHT] = calculateBerechnetesGewicht(angaben[GEWICHT]);
+        angaben[FRACHTKOSTEN] = angaben[ANZAHL_KILOMETER] * (angaben[BERECHNETES_GEWICHT]/100) * frachtPro100Km;
+        angaben[NETTOUMSATZ] = angaben[ANZAHL_KARTONS] * produkteProKarton * preisProkarton;
+        angaben[GESAMTUMSATZ] = angaben[FRACHTKOSTEN] + angaben[NETTOUMSATZ];
+        angaben[RABATT] = calculateRabatt(angaben[NETTOUMSATZ]);
+        angaben[ZIELPREIS] = angaben[GESAMTUMSATZ] - angaben[RABATT];
 
         printAll(angaben);
     }
@@ -46,23 +46,24 @@ double calculateRabatt(double nettoumsatz)
     else return nettoumsatz * 0.07;
 }
 
-void print(string key, double value)
+void print(string key, string value, bool endline)
 {
-    cout << setw(20) << key << " : " << setw(15) << value << endl;
+    cout << setw(20) << key << " : " << setw(15) << value;
+    if (endline) cout << endl;
 }
 
-void printAll(map<string, double>& angaben)
+void printAll(map<key, double>& angaben)
 {
     cout << endl;
-    print("Anzahl Kartons", angaben["kartons"]);
-    print("Anzahl Kilometer", angaben["kilometer"]);
-    print("Gewicht", angaben["gewicht"]);
-    print("Berechnetes Gewicht", angaben["berechnetesGewicht"]);
+    print("Anzahl Kartons", to_string(angaben[ANZAHL_KARTONS]));
+    print("Anzahl Kilometer", to_string(angaben[ANZAHL_KILOMETER]));
+    print("Gewicht", to_string(angaben[GEWICHT]));
+    print("Berechnetes Gewicht", to_string(angaben[BERECHNETES_GEWICHT]));
     cout << endl;
-    print("Fracht", angaben["fracht"]);
-    print("Nettoumsatz", angaben["nettoumsatz"]);
-    print("gesamtumsatz", angaben["gesamtumsatz"]);
-    print("Rabatt", angaben["rabatt"]);
-    print("Zielpreis", angaben["zielpreis"]);
+    print("Fracht", to_string(angaben[FRACHTKOSTEN]));
+    print("Nettoumsatz", to_string(angaben[NETTOUMSATZ]));
+    print("Gesamtumsatz", to_string(angaben[GESAMTUMSATZ]));
+    print("Rabatt", to_string(angaben[RABATT]));
+    print("Zielpreis", to_string(angaben[ZIELPREIS]));
     cout << endl << endl;
 }
