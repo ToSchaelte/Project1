@@ -11,7 +11,7 @@ int main()
 	int month = 0;
 	int year = 0;
 
-	while (true)
+	for (int i = 0; i < 100; ++i)
 	{
 		cout << "insert a date (dd mm yyyy): ";
 		cin >> day >> month >> year;
