@@ -7,16 +7,22 @@ using namespace std;
 
 int main()
 {
+	int day = 0;
+	int month = 0;
+	int year = 0;
+
 	while (true)
 	{
-		int day = 0;
-		int month = 0;
-		int year = 0;
-
 		cout << "insert a date (dd mm yyyy): ";
 		cin >> day >> month >> year;
 
 		if (day == 0 && month == 0 && year == 0) break;
+
+		if (year < YEAR_OF_MONDAY)
+		{
+			cout << "Year is too low to calculate" << endl;
+			continue;
+		}
 
 		if (!isYearValid(day, month, year))
 		{
@@ -32,19 +38,15 @@ int main()
 
 string getDay(int day, int month, int year)
 {
-	int dayOfMonday = 1;
-	int monthOfMonday = 1;
-	int yearOfMonday = 1900;
-
 	int dayDifference = 0;
-	for (int i = yearOfMonday; i < year; ++i)
+	for (int i = YEAR_OF_MONDAY; i < year; ++i)
 		if (isLeapYear(i)) dayDifference += 366;
 		else dayDifference += 365;
 
-	for (int i = monthOfMonday; i < month; ++i)
+	for (int i = MONTH_OF_MONDAY; i < month; ++i)
 		dayDifference += getDayCountOfMonth(i, year);
 
-	dayDifference += day - dayOfMonday;
+	dayDifference += day - DAY_OF_MONDAY;
 
 	return getDayOfWeek(dayDifference % 7);
 }
