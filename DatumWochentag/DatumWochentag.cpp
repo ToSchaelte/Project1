@@ -25,7 +25,7 @@ int main()
 
 		if (!isDateValid(day, month, year))
 		{
-			cout << "Year is not valid" << endl;
+			cout << "Date is not valid" << endl;
 			continue;
 		}
 
