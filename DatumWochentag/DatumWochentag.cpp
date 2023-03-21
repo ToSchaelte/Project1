@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "DatumWochentag.h"
 #include "utils.h"
 
@@ -24,7 +23,7 @@ int main()
 			continue;
 		}
 
-		if (!isYearValid(day, month, year))
+		if (!isDateValid(day, month, year))
 		{
 			cout << "Year is not valid" << endl;
 			continue;
@@ -48,35 +47,5 @@ string getDay(int day, int month, int year)
 
 	dayDifference += day - DAY_OF_MONDAY;
 
-	return getDayOfWeek(dayDifference % 7);
-}
-
-string getDayOfWeek(int dayIndex)
-{
-	switch (dayIndex)
-	{
-	case 0:
-		return "Monday";
-		break;
-	case 1:
-		return "Tuesday";
-		break;
-	case 2:
-		return "Wednesday";
-		break;
-	case 3:
-		return "Thursday";
-		break;
-	case 4:
-		return "Friday";
-		break;
-	case 5:
-		return "Saturday";
-		break;
-	case 6:
-		return "Sunday";
-		break;
-	default:
-		break;
-	}
+	return getDayAsString(dayDifference % 7);
 }
