@@ -1,28 +1,40 @@
 #include <iostream>
+#include <iomanip>
+#include <vector>
 using namespace std;
 
-const unsigned geldscheine[] = {
+const vector<unsigned> geldscheine = {
 	500, 200, 100, 50, 20, 10, 5
 };
 const int MAX_BETRAG = 10000;
 
-void printGeldscheine(unsigned gewolltesGeld, unsigned geldscheinIndex)
+void printGeldscheine(unsigned anzahlGeldscheine[7])
 {
-	if (geldscheinIndex >= sizeof(geldscheine)/sizeof(unsigned)) return;
-	if (gewolltesGeld >= geldscheine[geldscheinIndex])
-	{
-		gewolltesGeld -= geldscheine[geldscheinIndex];
-		cout << geldscheine[geldscheinIndex] << endl;
-	}
-	printGeldscheine(gewolltesGeld, geldscheinIndex + (gewolltesGeld < geldscheine[geldscheinIndex]));
+	for (int i = 0; i < 7; ++i) 
+		cout << "Anzahl der " << setw(3) << geldscheine[i] << " Euro-Scheine :" << setw(5) << anzahlGeldscheine[i] << endl;
+	cout << endl;
+}
+
+void getAnzahlGeldscheine(unsigned gewolltesGeld, unsigned geldscheinIndex, unsigned anzahlGeldscheine[7])
+{
+	if (geldscheinIndex >= 7) return;
+	if (gewolltesGeld < geldscheine[geldscheinIndex])
+		return getAnzahlGeldscheine(gewolltesGeld, geldscheinIndex+1, anzahlGeldscheine);
+	++anzahlGeldscheine[geldscheinIndex];
+	return getAnzahlGeldscheine(gewolltesGeld - geldscheine[geldscheinIndex], geldscheinIndex, anzahlGeldscheine);
+}
+
+void getAnzahlGeldscheine(unsigned gewolltesGeld, unsigned anzahlGeldscheine[7])
+{
+	return getAnzahlGeldscheine(gewolltesGeld, 0, anzahlGeldscheine);
 }
 
 int main()
 {
 	while (true)
 	{
-		long gewolltesGeld = 0;
-		cout << "Wie viel Geld willst du? ";
+		long long gewolltesGeld = 0;
+		cout << "Wie viel Geld moechten Sie abheben? ";
 		cin >> gewolltesGeld;
 		if (gewolltesGeld > MAX_BETRAG)
 		{
@@ -40,6 +52,8 @@ int main()
 			continue;
 		}
 
-		printGeldscheine(gewolltesGeld, 0);
+		unsigned anzahlGeldscheine[7] = { 0,0,0,0,0,0,0 };
+		getAnzahlGeldscheine(gewolltesGeld, anzahlGeldscheine);
+		printGeldscheine(anzahlGeldscheine);
 	}
 }
