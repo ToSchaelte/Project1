@@ -1,15 +1,10 @@
 #include <iostream>
 
-void printFibunacci(int counter, int number1, int number2)
+void printFibunacci(int counter, int number1 = 0, int number2 = 1)
 {
     std::cout << number2 << " ";
-    if (counter <= 0) return;
+    if (counter <= 1) return;
     printFibunacci(counter - 1, number2, number1 + number2);
-}
-
-void printFibunacci(int count)
-{
-    printFibunacci(count-1, 0, 1);
 }
 
 unsigned long long getFakultaet(unsigned long long number)
