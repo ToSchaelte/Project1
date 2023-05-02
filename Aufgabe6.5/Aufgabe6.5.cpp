@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-const vector<unsigned> geldscheine = {
+const unsigned geldscheine[] = {
 	500, 200, 100, 50, 20, 10, 5
 };
 const int MAX_BETRAG = 10000;
