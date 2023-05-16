@@ -84,16 +84,55 @@ int main()
 	srand(time(NULL));
 	int values[SIZE_OF_VALUES];
 	for (int i = 0; i < SIZE_OF_VALUES; ++i)
-		cout << (values[i] = rand()/100) << " ";
-	cout << endl
-		<< "Min: " << values[getMinIndex(values)] << endl
-		<< "Max: " << values[getMaxIndex(values)] << endl
-		<< "Med: " << getMedian(values) << endl
-		<< "Spa: " << getSpan(values) << endl
-		<< "Dev: " << getStandardDeviasion(values) << endl
-		<< "Most:" << endl;
-	int mostAppearingValues[5][2];
-	getMostAppearingValues(values, mostAppearingValues);
-	for (int i = 0; i < 5; ++i)
-		cout << setw(4) << mostAppearingValues[i][VALUE] << ": " << mostAppearingValues[i][COUNT] << "x" << endl;
+		cout << (values[i] = rand() / 100) << " ";
+
+	while(true)
+	{
+		int choice = -1;
+		cout << "Choose your action:" << endl
+			<< "Min:  0" << endl
+			<< "Max:  1" << endl
+			<< "Med:  2" << endl
+			<< "Spa:  3" << endl
+			<< "Dev:  4" << endl
+			<< "Most: 5" << endl
+			<< "New:  6" << endl;
+		cin >> choice;
+
+		switch (choice)
+		{
+		case 0:
+			cout << "Min:  " << values[getMinIndex(values)] << endl;
+			break;
+		case 1:
+			cout << "Max:  " << values[getMaxIndex(values)] << endl;
+			break;
+		case 2:
+			cout << "Med:  " << getMedian(values) << endl;
+			break;
+		case 3:
+			cout << "Spa:  " << getSpan(values) << endl;
+			break;
+		case 4:
+			cout << "Dev:  " << getStandardDeviasion(values) << endl;
+			break;
+		case 5:
+			cout << "Most: " << endl;
+			int mostAppearingValues[5][2];
+			getMostAppearingValues(values, mostAppearingValues);
+			for (int i = 0; i < 5; ++i)
+				cout << setw(4) << mostAppearingValues[i][VALUE] << ": " << mostAppearingValues[i][COUNT] << "x" << endl;
+			break;
+		case 6:
+			cout << "New: " << endl;
+			for (int i = 0; i < SIZE_OF_VALUES; ++i)
+				cout << (values[i] = rand() / 100) << " ";
+			break;
+		default:
+			cout << "EXIT" << endl;
+			return 0;
+		}
+		cout << endl << endl;
+	}
+	return 0;
 }
