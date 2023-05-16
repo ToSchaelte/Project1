@@ -1,11 +1,17 @@
 #include <iostream>
 #include <ctime>
 #include <algorithm>
+#include <iomanip>
 using namespace std;
 
-const int SIZE_OF_VALUES = 10;
+const int SIZE_OF_VALUES = 100;
 
-int getMinIndex(int values[])
+enum {
+	VALUE = 0,
+	COUNT
+};
+
+int getMinIndex(int values[SIZE_OF_VALUES])
 {
 	int min = 0;
 	for (int i = 0; i < SIZE_OF_VALUES; i++)
@@ -13,7 +19,7 @@ int getMinIndex(int values[])
 	return min;
 }
 
-int getMaxIndex(int values[])
+int getMaxIndex(int values[SIZE_OF_VALUES])
 {
 	int max = 0;
 	for (int i = 0; i < SIZE_OF_VALUES; i++)
@@ -21,11 +27,12 @@ int getMaxIndex(int values[])
 	return max;
 }
 
-float getMedian(int sortedValues[])
+float getMedian(int values[SIZE_OF_VALUES])
 {
+	sort(values, values + SIZE_OF_VALUES);
 	int mid = SIZE_OF_VALUES / 2;
-	if (SIZE_OF_VALUES % 2 != 0) return sortedValues[mid];
-	return ((float)sortedValues[mid] + (float)sortedValues[mid-1]) / 2.0;
+	if (SIZE_OF_VALUES % 2 != 0) return values[mid];
+	return ((float)values[mid] + (float)values[mid-1]) / 2.0;
 }
 
 int getSpan(int values[])
@@ -33,7 +40,7 @@ int getSpan(int values[])
 	return values[getMaxIndex(values)] - values[getMinIndex(values)];
 }
 
-int getStandardDeviasion(int values[])
+int getStandardDeviasion(int values[SIZE_OF_VALUES])
 {
 	int med = getMedian(values);
 	float sum = 0;
@@ -43,9 +50,33 @@ int getStandardDeviasion(int values[])
 	return sum / SIZE_OF_VALUES;
 }
 
-void getMostAppearingValues(int sortedValues[SIZE_OF_VALUES], int mostAppearingValues[5])
+void getMostAppearingValues(int values[SIZE_OF_VALUES], int mostAppearingValues[5][2])
 {
-	
+	sort(values, values + SIZE_OF_VALUES);
+	int countOfAppearances[SIZE_OF_VALUES];
+	for (int i = 0; i < SIZE_OF_VALUES; ++i)
+	{
+		countOfAppearances[i] = 1;
+		for (int j = i+1; j < SIZE_OF_VALUES-i; ++j)
+		{
+			if (values[j] == values[i])
+			{
+				countOfAppearances[j] = 0;
+				countOfAppearances[i]++;
+				continue;
+			}
+			i = j - 1;
+			break;
+		}
+	}
+
+	for (int i = 0; i < 5; ++i)
+	{
+		int indexOfMax = getMaxIndex(countOfAppearances);
+		mostAppearingValues[i][VALUE] = values[indexOfMax];
+		mostAppearingValues[i][COUNT] = countOfAppearances[indexOfMax];
+		countOfAppearances[indexOfMax] = INT_MIN;
+	}
 }
 
 int main()
@@ -53,11 +84,7 @@ int main()
 	srand(time(NULL));
 	int values[SIZE_OF_VALUES];
 	for (int i = 0; i < SIZE_OF_VALUES; ++i)
-		cout << (values[i] = rand()/1000) << " ";
-	sort(begin(values), end(values));
-	cout << endl << "sorted: ";
-	for (int i = 0; i < SIZE_OF_VALUES; ++i)
-		cout << values[i] << " ";
+		cout << (values[i] = rand()/100) << " ";
 	cout << endl
 		<< "Min: " << values[getMinIndex(values)] << endl
 		<< "Max: " << values[getMaxIndex(values)] << endl
@@ -65,8 +92,8 @@ int main()
 		<< "Spa: " << getSpan(values) << endl
 		<< "Dev: " << getStandardDeviasion(values) << endl
 		<< "Most:" << endl;
-	int mostAppearingValues[5];
+	int mostAppearingValues[5][2];
 	getMostAppearingValues(values, mostAppearingValues);
 	for (int i = 0; i < 5; ++i)
-		cout << mostAppearingValues[i] << endl;
+		cout << setw(4) << mostAppearingValues[i][VALUE] << ": " << mostAppearingValues[i][COUNT] << "x" << endl;
 }
