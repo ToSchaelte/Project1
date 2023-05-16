@@ -4,7 +4,7 @@
 #include <iomanip>
 using namespace std;
 
-const int SIZE_OF_VALUES = 100;
+#define SIZE_OF_VALUES 100
 
 enum {
 	VALUE = 0,
