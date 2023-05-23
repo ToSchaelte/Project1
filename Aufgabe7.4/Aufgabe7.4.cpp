@@ -1,33 +1,78 @@
 #include <iostream>
+#include <iomanip>
+#include <vector>
+#include <sstream>
 using namespace std;
 
-//  a b         a1 * a2 + b1 * c2   a1 * b2 + b1 * d2
-//  c d         c1 * a2 + d1 * c2   c1 * b2 + d1 * d2
+
 
 struct Matrix
 {
-    int a = 0, b = 0, c = 0, d = 0;
+    vector<vector<int>> values;
 
-    Matrix(int a, int b, int c, int d)
+    Matrix(vector<vector<int>> values)
     {
-        this->a = a;
-        this->b = b;
-        this->c = c;
-        this->d = d;
+        this->values = values;
     }
 
     Matrix operator*(Matrix m)
     {
-        return Matrix(a * m.a + b * m.c, a * m.b + b * m.d,
-            c * m.a + d * m.c, c * m.b + d * m.d);
+        vector<vector<int>> newValues = vector<vector<int>>(values.size());
+
+        for (int row = 0; row < values.size(); ++row)
+        {
+            newValues[row] = vector<int>(m.values.size());
+            for (int column = 0; column < m.values.size(); ++column)
+            {
+                newValues[row][column] = 0;
+                for (int i = 0; i < values[0].size(); ++i)
+                    newValues[row][column] += values[row][i] * m.values[i][column];
+            }
+        }
+
+        return Matrix(newValues);
+    }
+
+    string toString()
+    {
+        stringstream sstream;
+
+        sstream << "/ ";
+        for (int i = 0; i < values[0].size(); ++i)
+            sstream << setw(4) << values[0][i] << " ";
+        sstream << "\\\n";
+
+        for (int i = 1; i < values.size() - 1; ++i)
+        {
+            sstream << "| ";
+            for (int j = 0; j < values[i].size(); ++j)
+                sstream << setw(4) << values[i][j] << " ";
+            sstream << "|\n";
+        }
+
+        sstream << "\\ ";
+        for (int i = 0; i < values[values.size() - 1].size(); ++i)
+            sstream << setw(4) << values[values.size() - 1][i] << " ";
+        sstream << "/";
+
+        return sstream.str();
     }
 };
 
 int main()
 {
-    Matrix m1(1, 3, 2, 6);
-    Matrix m2(4, 2, 3, 5);
-    Matrix m3 = m1 * m2;
-    cout << m3.a << " " << m3.b << endl
-        << m3.c << " " << m3.d << endl;
+    vector<vector<int>> valuesA = {
+        { 1, 3, 4 },
+        { 2, 6, 8 },
+        { 3, 9, 12}
+    };
+    vector<vector<int>> valuesB = {
+        { 4, 2, 69 },
+        { 3, 5, 73 },
+        { 2, 8, 77 }
+    };
+    Matrix matrixA(valuesA);
+    Matrix matrixB(valuesB);
+    Matrix matrixC = matrixA * matrixB;
+    cout << matrixC.toString();
 }
