@@ -9,6 +9,10 @@ using namespace std;
 
 Matrix::Matrix(vector<vector<int>> values)
 {
+    int len = 0;
+    for (int i = 0; i < values.size(); ++i)
+        if (len == 0) len = values[i].size();
+        else if (values[i].size() != len) throw exception("this is not a correct matrix");
     this->values = values;
 }
 
