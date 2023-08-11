@@ -17,9 +17,9 @@ void BubbleSort::printRun(int a[], int run, int arraySize)
 
 void BubbleSort::sort(int a[], int arraySize)
 {
-    for (int i = arraySize - 1; i > 0; i -= 1)
+    for (int i = arraySize - 1; i > 0; --i)
     {
-        for (int j = 0; j < i; j++)
+        for (int j = 0; j < i; ++j)
             if (a[j] > a[j + 1])
                 swap(a[j], a[j + 1]);
         printRun(a, arraySize - i, arraySize);
