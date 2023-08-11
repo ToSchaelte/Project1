@@ -3,14 +3,16 @@
 #include <iomanip>
 
 #include "BubbleSort.h"
+#include "CommonSortingUtils.h"
 
 using namespace std;
+
+typedef CommonSortingUtils Utils;
 
 void BubbleSort::printRun(int a[], int run, int arraySize)
 {
     cout << endl << "Run " << run << ":  ";
-    for (int i = 0; i < arraySize; ++i)
-        cout << a[i] << " ";
+    Utils::print(a, arraySize);
 }
 
 void BubbleSort::sort(int a[], int arraySize)
@@ -21,5 +23,7 @@ void BubbleSort::sort(int a[], int arraySize)
             if (a[j] > a[j + 1])
                 swap(a[j], a[j + 1]);
         printRun(a, arraySize - i, arraySize);
+        if (Utils::isSorted(a, arraySize))
+            return;
     }
 }

@@ -3,8 +3,11 @@
 #include <iomanip>
 
 #include "BubbleSort.h"
+#include "CommonSortingUtils.h"
 
 using namespace std;
+
+typedef CommonSortingUtils Utils;
 
 constexpr int array_size = 10;
 
@@ -12,15 +15,12 @@ int main(int argc, char* argv[])
 {
     srand(time(NULL));
     int numbers[array_size];
-    cout << "Before: ";
     for (int i = 0; i < array_size; ++i)
-    {
         numbers[i] = rand() / 100;
-        cout << numbers[i] << " ";
-    }
+    cout << "Before: ";
+    Utils::print(numbers, array_size);
     BubbleSort::sort(numbers, array_size);
     cout << endl << "After:  ";
-    for (int i = 0; i < array_size; ++i)
-        cout << numbers[i] << " ";
+    Utils::print(numbers, array_size);
     return 0;
 }
