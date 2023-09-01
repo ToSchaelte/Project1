@@ -12,10 +12,10 @@ typedef CommonSortingUtils Utils;
 static int _counter;
 static int _arraySize;
 
-void QuickSort::printRun(int a[], int run, int arraySize)
+void QuickSort::printRun(int a[])
 {
-    cout << endl << "Run " << run << ":  ";
-    Utils::print(a, arraySize);
+    cout << endl << "Run " << _counter++ << ":  ";
+    Utils::print(a, _arraySize);
 }
 
 void QuickSort::sort(int a[], int left, int right)
@@ -29,7 +29,7 @@ void QuickSort::sort(int a[], int left, int right)
         swap(a[++i], a[j]);
     }
     swap(a[i + 1], a[right]);
-    printRun(a, _counter++, _arraySize);
+    printRun(a);
     sort(a, left, i);
     sort(a, i + 2, right);
 }
