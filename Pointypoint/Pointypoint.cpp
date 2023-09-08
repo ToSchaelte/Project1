@@ -13,7 +13,7 @@ int* generateArray(int size)
 
 int main()
 {
-    cout << "Laenge:   ";
+    cout << "Length: ";
     int arraySize;
     cin >> arraySize;
     int* numbers = generateArray(arraySize);
@@ -21,25 +21,23 @@ int main()
     for (int i = 0; i < arraySize; ++i)
         cout << numbers[i] << " ";
     cout << endl;
-    int uLen = 0;
-    int gLen = 0;
+    int eLen = 0;
+    for (int i = 0; i < arraySize; ++i) eLen += numbers[i] % 2;
+    int oLen = arraySize - eLen;
+    int* odd = new int[oLen];
+    int* even = new int[eLen];
+    int oi = 0;
+    int ei = 0;
     for (int i = 0; i < arraySize; ++i)
-        if (numbers[i] % 2 == 0) ++gLen;
-        else ++uLen;
-    int* ungerade = new int[uLen];
-    int* gerade = new int[gLen];
-    int ui = 0;
-    int gi = 0;
-    for (int i = 0; i < arraySize; ++i)
-        if (numbers[i] % 2 == 0) gerade[gi++] = numbers[i];
-        else ungerade[ui++] = numbers[i];
-    cout << "Gerade:   ";
-    for (int i = 0; i < gLen; ++i)
-        cout << gerade[i] << " ";
-    cout << endl<< "Ungerade: ";
-    for (int i = 0; i < uLen; ++i)
-        cout << ungerade[i] << " ";
+        if (numbers[i] % 2 == 0) even[ei++] = numbers[i];
+        else odd[oi++] = numbers[i];
+    cout << "Even:   ";
+    for (int i = 0; i < eLen; ++i)
+        cout << even[i] << " ";
+    cout << endl<< "Odd:    ";
+    for (int i = 0; i < oLen; ++i)
+        cout << odd[i] << " ";
     cout << endl;
-    delete[] ungerade;
-    delete[] gerade;
+    delete[] odd;
+    delete[] even;
 }
