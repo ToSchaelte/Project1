@@ -17,13 +17,13 @@ int main()
     int arraySize;
     cin >> arraySize;
     int* numbers = generateArray(arraySize);
-    cout << "Array:    ";
+    cout << "Array:  ";
     for (int i = 0; i < arraySize; ++i)
         cout << numbers[i] << " ";
     cout << endl;
-    int eLen = 0;
-    for (int i = 0; i < arraySize; ++i) eLen += numbers[i] % 2;
-    int oLen = arraySize - eLen;
+    int oLen = 0;
+    for (int i = 0; i < arraySize; ++i) oLen += numbers[i] % 2;
+    int eLen = arraySize - oLen;
     int* odd = new int[oLen];
     int* even = new int[eLen];
     int oi = 0;
