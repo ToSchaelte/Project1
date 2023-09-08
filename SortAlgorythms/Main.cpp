@@ -11,7 +11,7 @@ using namespace std;
 
 typedef CommonSortingUtils Utils;
 
-constexpr int array_size = 10;
+constexpr int array_size = 100000;
 
 int main(int argc, char* argv[])
 {
@@ -23,17 +23,19 @@ int main(int argc, char* argv[])
         numbers1[i] = rand() / 10;
         numbers2[i] = numbers1[i];
     }
-    cout << "Before: ";
-    Utils::print(numbers1, array_size);
+    cout << "Started" << endl;
+    //cout << "Before: ";
+    //Utils::print(numbers1, array_size);
     const clock_t beforBubble = clock();
-    cout << endl << endl << "Bubble sort: ";
+    //cout << endl << endl << "Bubble sort: ";
     BubbleSort::sort(numbers1, array_size);
     const clock_t afterBubble = clock();
-    cout << endl << endl << "Quick sort: ";
+    //cout << endl << endl << "Quick sort: ";
     QuickSort::sort(numbers2, array_size);
     const clock_t afterQuick = clock();
-    cout << endl << endl << "After:  ";
-    Utils::print(numbers1, array_size);
+    //cout << endl << endl << "After:  ";
+    //Utils::print(numbers1, array_size);
+    cout << "Ended" << endl;
     cout << endl << "Bubble sort: " << (afterBubble - beforBubble) / (double)CLOCKS_PER_SEC << endl
         << "Quick sort: " << (afterQuick - afterBubble) / (double)CLOCKS_PER_SEC << endl;
     return 1;

@@ -22,7 +22,7 @@ void BubbleSort::sort(int a[], int arraySize)
         for (int j = 0; j < i; ++j)
             if (a[j] > a[j + 1])
                 swap(a[j], a[j + 1]);
-        printRun(a, arraySize - i, arraySize);
+        //printRun(a, arraySize - i, arraySize);
         if (Utils::isSorted(a, arraySize))
             return;
     }

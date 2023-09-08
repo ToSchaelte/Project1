@@ -20,18 +20,14 @@ void QuickSort::printRun(int a[])
 
 void QuickSort::sort(int a[], int left, int right)
 {
-    if (left >= right-1) return;
-    int pivot = a[right];
-    int i = (left - 1);
+    if (left >= right - 1) return;
+    int i = left;
     for (int j = left; j < right; ++j)
-    {
-        if (a[j] >= pivot) continue;
-        swap(a[++i], a[j]);
-    }
-    swap(a[i + 1], a[right]);
-    printRun(a);
-    sort(a, left, i);
-    sort(a, i + 2, right);
+        if (a[j] < a[right]) swap(a[i++], a[j]);
+    swap(a[i], a[right]);
+    //printRun(a);
+    sort(a, left, i - 1);
+    sort(a, i + 1, right);
 }
 
 void QuickSort::sort(int a[], int arraySize)
