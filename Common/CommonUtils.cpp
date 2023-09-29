@@ -43,3 +43,10 @@ string getDayAsString(int dayIndex)
 	string days[7] = { "Monday",	"Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
 	return days[dayIndex];
 }
+
+int indexOf(char *array, int arrayLength, char item)
+{
+	for (int i = 0; i < arrayLength; ++i)
+		if (array[i] == item) return i;
+	return -1;
+}
