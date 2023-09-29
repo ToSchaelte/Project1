@@ -2,13 +2,6 @@
 
 using namespace std;
 
-int indexOf(char *array, int arrayLength, char item)
-{
-    for (int i = 0; i < arrayLength; ++i)
-        if (array[i] == item) return i;
-    return -1;
-}
-
 void sortAlphabetical(char ***a, int left, int right)
 {
     if (left >= right - 1) return;
