@@ -9,70 +9,63 @@ int indexOf(char *array, int arrayLength, char item)
     return -1;
 }
 
-void sortAlphabetical(char **a, char **b, int left, int right)
+void sortAlphabetical(char ***a, int left, int right)
 {
     if (left >= right - 1) return;
     int i = left;
     for (int j = left; j < right; ++j)
     {
         int k = 0;
-        while (a[j][k] == a[right][k])
+        while (a[j][0][k] == a[right][0][k])
         {
             ++k;
             if (k >= 30) break;
         }
-        if (a[j][k] < a[right][k])
+        if (a[j][0][k] < a[right][0][k])
         {
             swap(a[i], a[j]);
-            swap(b[i], b[j]);
             ++i;
         }
     }
     swap(a[i], a[right]);
-    swap(b[i], b[right]);
-    sortAlphabetical(a, b, left, i - 1);
-    sortAlphabetical(a, b, i + 1, right);
+    sortAlphabetical(a, left, i - 1);
 }
 
-void sortAlphabetical(char **a, char **b, int arraySize)
+void sortAlphabetical(char ***a, int arraySize)
 {
-    sortAlphabetical(a, b, 0, arraySize - 1);
+    sortAlphabetical(a, 0, arraySize - 1);
 }
 
 int main()
 {
+    // Init
     int studentCount = 0;
     cout << "How many students are in the class? ";
     cin >> studentCount;
-    char **students = new char *[studentCount];
-    char **studentFirstNames = new char *[studentCount];
-    int li = 0;
-    int fi = 0;
-    for (int i = 0; i < studentCount*2; ++i)
-    {
-        if (i % 2 == 0)
-        {
-            students[li] = new char[30];
-            cout << "Student Nr. " << li + 1 << "(last name): ";
-            cin >> students[li];
-            ++li;
-            continue;
-        }
-        studentFirstNames[fi] = new char[30];
-        cout << "Student Nr. " << fi + 1 << "(first name): ";
-        cin >> studentFirstNames[fi];
-        ++fi;
-    }
-
-    sortAlphabetical(students, studentFirstNames, studentCount);
-    cout << endl << endl << "Sorted:" << endl;
-    for (int i = 0; i < studentCount; ++i) cout << i+1 << ": " << students[i] << ", " << studentFirstNames[i] << endl;
-
+    char ***students = new char **[studentCount];
     for (int i = 0; i < studentCount; ++i)
     {
+        students[i] = new char *[2];
+        students[i][0] = new char[30];
+        cout << "Student Nr. " << i + 1 << "(last name): ";
+        cin >> students[i][0];
+
+        students[i][1] = new char[30];
+        cout << "Student Nr. " << i + 1 << "(first name): ";
+        cin >> students[i][1];
+    }
+
+    // Sort
+    sortAlphabetical(students, studentCount);
+    cout << endl << endl << "Sorted:" << endl;
+    for (int i = 0; i < studentCount; ++i) cout << i+1 << ": " << students[i][0] << ", " << students[i][1] << endl;
+
+    // Delete
+    for (int i = 0; i < studentCount; ++i)
+    {
+        delete[] students[i][0];
+        delete[] students[i][1];
         delete[] students[i];
-        delete[] studentFirstNames[i];
     }
     delete[] students;
-    delete[] studentFirstNames;
 }
