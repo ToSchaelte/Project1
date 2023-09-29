@@ -9,16 +9,8 @@ void sortAlphabetical(char ***a, int left, int right)
     for (int j = left; j < right; ++j)
     {
         int k = 0;
-        while (a[j][0][k] == a[right][0][k])
-        {
-            ++k;
-            if (k >= 30) break;
-        }
-        if (a[j][0][k] < a[right][0][k])
-        {
-            swap(a[i], a[j]);
-            ++i;
-        }
+        while (a[j][0][k] == a[right][0][k]) if (++k >= 30) break; // search for first letter in which they differ (enhancement for strings)
+        if (a[j][0][k] < a[right][0][k]) swap(a[i++], a[j]); // check and swap (default QuickSort)
     }
     swap(a[i], a[right]);
     sortAlphabetical(a, left, i - 1);
