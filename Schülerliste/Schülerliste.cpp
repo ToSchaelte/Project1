@@ -8,9 +8,16 @@ void sortAlphabetical(char ***a, int left, int right)
     int i = left;
     for (int j = left; j < right; ++j)
     {
-        int k = 0;
-        while (a[j][0][k] == a[right][0][k]) if (++k >= 30) break; // search for first letter in which they differ (enhancement for strings)
-        if (a[j][0][k] < a[right][0][k]) swap(a[i++], a[j]); // check and swap (default QuickSort)
+        int firstLastName = 0;
+        int k;
+        do
+        {
+            k = 0;
+            while (a[j][firstLastName][k] == a[right][firstLastName][k]) if (++k >= 30) break; // search for first letter in which they differ (enhancement for strings)
+            if (k < 30) break;
+            ++firstLastName;
+        } while (firstLastName < 2);
+        if (a[j][firstLastName][k] < a[right][firstLastName][k]) swap(a[i++], a[j]); // check and swap (default QuickSort)
     }
     swap(a[i], a[right]);
     sortAlphabetical(a, left, i - 1);
@@ -32,11 +39,11 @@ int main()
     {
         students[i] = new char *[2];
         students[i][0] = new char[30];
-        cout << "Student Nr. " << i + 1 << "(last name): ";
+        cout << "Student Nr. " << i + 1 << " (last name): ";
         cin >> students[i][0];
 
         students[i][1] = new char[30];
-        cout << "Student Nr. " << i + 1 << "(first name): ";
+        cout << "Student Nr. " << i + 1 << " (first name): ";
         cin >> students[i][1];
     }
 
