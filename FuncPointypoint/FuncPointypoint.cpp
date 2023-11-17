@@ -5,21 +5,21 @@ using namespace std;
 
 int main()
 {
-	int eingabe, zahl;
+	int input, num;
 	void (*pfunk[3]) (int) = {
-		[](int zahl) { cout << hex << zahl; },
-		[](int zahl) { cout << dec << zahl; },
-		[](int zahl) { cout << oct << zahl; }
+		[](int num) { cout << hex << num; },
+		[](int num) { cout << dec << num; },
+		[](int num) { cout << oct << num; }
 	};
 	cout << "Please insert a number: ";
-	cin >> zahl;
+	cin >> num;
 	do
 	{
 		cout << endl << "Which conversion? (0:end, 1:hex, 2:dec, 3:oct): ";
-		cin >> eingabe;
-		if (eingabe > 0 && eingabe < 4) pfunk[eingabe - 1](zahl);
-		else if (eingabe != 0) cout << endl << "invalid input" << endl;
+		cin >> input;
+		if (input > 0 && input < 4) pfunk[input - 1](num);
+		else if (input != 0) cout << endl << "invalid input" << endl;
 		else cout << endl << "bye bye \\(^_^)/" << endl;
-	} while (eingabe);
+	} while (input);
 	return 0;
 }
