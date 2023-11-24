@@ -13,9 +13,9 @@ struct Student
 int main()
 {
 	srand(time(NULL));
-	int studentCount = 20;
-	Student *students = new Student[studentCount];
-	for (int i = 0; i < studentCount; ++i)
+	auto studentCount = 20;
+	auto students = new Student[studentCount];
+	for (auto i = 0; i < studentCount; ++i)
 	{
 		int pcNr;
 		cout << "PC Number: ";
@@ -34,7 +34,7 @@ int main()
 		cout << endl;
 	}
 	cout << endl;
-	for (int i = 0; i < studentCount; ++i)
+	for (auto i = 0; i < studentCount; ++i)
 		cout << "The ID of the student " << students[i].firstName << " " << students[i].lastName
 		<< " at the PC " << students[i].pcNumber << " is: " << students[i].id << endl;
 	delete[] students;
