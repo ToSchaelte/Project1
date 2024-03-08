@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
     int numbers2[array_size];
     for (int i = 0; i < array_size; ++i)
     {
-        numbers1[i] = rand() / 10;
+        numbers1[i] = rand() % 10;
         numbers2[i] = numbers1[i];
     }
     cout << "Started" << endl;
