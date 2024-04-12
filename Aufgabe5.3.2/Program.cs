@@ -6,9 +6,10 @@ namespace Task_5_3_2
 {
     internal abstract class Program
     {
+        private const int CodeLength = 5;
         public static void Main()
         {
-            var input = new char[5];
+            var input = new char[CodeLength];
             var errorMessage = string.Empty;
             var isValid = true;
             do
