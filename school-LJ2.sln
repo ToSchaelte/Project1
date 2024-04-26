@@ -34,7 +34,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufgabe5.3.1", "Aufgabe5.3.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aufgabe5.3.2", "Aufgabe5.3.2\Aufgabe5.3.2.csproj", "{8408197B-2A69-46FE-990D-30049151DDB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes", "Classes\Classes.csproj", "{EE4ECE53-95FA-4530-992A-DC9C0F3906AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fraction", "Fraction\Fraction.csproj", "{EE4ECE53-95FA-4530-992A-DC9C0F3906AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.CSharp", "Common.CSharp\Common.CSharp.csproj", "{67E1AC01-744E-4E42-99E9-6513242077D2}"
 EndProject

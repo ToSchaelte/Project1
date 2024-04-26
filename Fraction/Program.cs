@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Classes
+namespace Fraction
 {
     internal class Program
     {

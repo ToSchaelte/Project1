@@ -1,7 +1,7 @@
 ﻿using System;
 using Common.CSharp;
 
-namespace Classes
+namespace Fraction
 {
     public class Fraction
     {
