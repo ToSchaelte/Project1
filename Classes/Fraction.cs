@@ -5,6 +5,8 @@ namespace Classes
 {
     public class Fraction
     {
+        #region Properties
+        
         public int Numerator { private set; get; }
         
         private int _denominator;
@@ -17,6 +19,8 @@ namespace Classes
             }
             get => _denominator;
         }
+
+        #endregion
 
         public Fraction(int numerator, int denominator)
         {
@@ -31,6 +35,8 @@ namespace Classes
             Simplify();
         }
 
+        #region Operators
+        
         public static Fraction operator +(Fraction fraction1, Fraction fraction2)
         {
             if (fraction1.Denominator == fraction2.Denominator)
@@ -63,6 +69,36 @@ namespace Classes
                 fraction1.Denominator * fraction2.Numerator).Simplified();
         }
 
+        public static bool operator <(Fraction fraction1, Fraction fraction2)
+        {
+            return fraction1.ToDouble() < fraction2.ToDouble();
+        }
+
+        public static bool operator <=(Fraction fraction1, Fraction fraction2)
+        {
+            return fraction1.ToDouble() <= fraction2.ToDouble();
+        }
+
+        public static bool operator >(Fraction fraction1, Fraction fraction2)
+        {
+            return fraction1.ToDouble() > fraction2.ToDouble();
+        }
+
+        public static bool operator >=(Fraction fraction1, Fraction fraction2)
+        {
+            return fraction1.ToDouble() >= fraction2.ToDouble();
+        }
+
+        public static bool operator ==(Fraction fraction1, Fraction fraction2)
+        {
+            return ReferenceEquals(fraction1, fraction2);
+        }
+
+        public static bool operator !=(Fraction fraction1, Fraction fraction2)
+        {
+            return !(fraction1 == fraction2);
+        }
+
         public override bool Equals(object obj)
         {
             if (!(obj is Fraction fraction)) return false;
@@ -73,6 +109,35 @@ namespace Classes
         {
             return other.Numerator == Numerator && other.Denominator == Denominator;
         }
+
+        public static explicit operator double(Fraction fraction)
+        {
+            return fraction.ToDouble();
+        }
+
+        public static explicit operator float(Fraction fraction)
+        {
+            return (float)fraction.ToDouble();
+        }
+
+        public static explicit operator string(Fraction fraction)
+        {
+            return fraction.ToString();
+        }
+
+        public static implicit operator Fraction(double d)
+        {
+            return FromDouble(d);
+        }
+
+        public static implicit operator Fraction(string s)
+        {
+            return FromString(s);
+        }
+
+        #endregion
+        
+        #region Helpers
 
         public void Simplify()
         {
@@ -94,6 +159,10 @@ namespace Classes
                 (uint)(Numerator < 0 ? Numerator * -1 : Numerator),
                 (uint)(Denominator < 0 ? Denominator * -1 : Denominator)));
         }
+        
+        #endregion
+
+        #region Converters
 
         public override string ToString()
         {
@@ -114,5 +183,14 @@ namespace Classes
             for (; tmp != Math.Round(tmp); i++) tmp += part;
             return new Fraction((int)tmp + i * full, i).Simplified();
         }
+
+        public static Fraction FromString(string s)
+        {
+            var values = s.Split('/');
+            if (values.Length != 2) throw new InvalidCastException();
+            return new Fraction(Convert.ToInt32(values[0]), Convert.ToInt32(values[1]));
+        }
+
+        #endregion
     }
 }
