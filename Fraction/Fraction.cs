@@ -7,33 +7,45 @@ namespace Fraction
     {
         #region Properties
         
-        public int Numerator { private set; get; }
+        public long Numerator { private set; get; }
         
-        private int _denominator;
-        public int Denominator
+        private ulong _denominator;
+        public ulong Denominator
         {
             private set
             {
-                if (value == 0) throw new ArgumentNullException(nameof(value));
+                if (value == 0) throw new DivideByZeroException();
                 _denominator = value;
             }
             get => _denominator;
         }
 
         #endregion
+        
+        #region Constructors
 
-        public Fraction(int numerator, int denominator)
+        public Fraction(long numerator, long denominator, bool simplify = true)
         {
-            if (denominator == 0) throw new ArgumentNullException(nameof(denominator));
+            if (denominator == 0) throw new DivideByZeroException();
             if (denominator < 0)
             {
                 numerator *= -1;
                 denominator *= -1;
             }
             Numerator = numerator;
-            Denominator = denominator;
-            Simplify();
+            Denominator = (ulong)denominator;
+            if (simplify) Simplify();
         }
+
+        public Fraction(long numerator, ulong denominator, bool simplify = true)
+        {
+            if (denominator == 0) throw new DivideByZeroException();
+            Numerator = numerator;
+            Denominator = denominator;
+            if (simplify) Simplify();
+        }
+        
+        #endregion
 
         #region Operators
         
@@ -43,7 +55,7 @@ namespace Fraction
                 return new Fraction(fraction1.Numerator + fraction2.Numerator, fraction1.Denominator).Simplified();
 
             return new Fraction(
-                fraction1.Numerator * fraction2.Denominator + fraction2.Numerator * fraction1.Denominator,
+                fraction1.Numerator * (long)fraction2.Denominator + fraction2.Numerator * (long)fraction1.Denominator,
                 fraction1.Denominator * fraction2.Denominator).Simplified();
         }
 
@@ -53,7 +65,7 @@ namespace Fraction
                 return new Fraction(fraction1.Numerator - fraction2.Numerator, fraction1.Denominator).Simplified();
 
             return new Fraction(
-                fraction1.Numerator * fraction2.Denominator - fraction2.Numerator * fraction1.Denominator,
+                fraction1.Numerator * (long)fraction2.Denominator - fraction2.Numerator * (long)fraction1.Denominator,
                 fraction1.Denominator * fraction2.Denominator).Simplified();
         }
 
@@ -65,8 +77,8 @@ namespace Fraction
 
         public static Fraction operator /(Fraction fraction1, Fraction fraction2)
         {
-            return new Fraction(fraction1.Numerator * fraction2.Denominator,
-                fraction1.Denominator * fraction2.Numerator).Simplified();
+            return new Fraction(fraction1.Numerator * (long)fraction2.Denominator,
+                (long)fraction1.Denominator * fraction2.Numerator).Simplified();
         }
 
         public static bool operator <(Fraction fraction1, Fraction fraction2)
@@ -110,7 +122,7 @@ namespace Fraction
             return other.Numerator == Numerator && other.Denominator == Denominator;
         }
 
-        public static explicit operator double(Fraction fraction)
+        public static implicit operator double(Fraction fraction)
         {
             return fraction.ToDouble();
         }
@@ -122,7 +134,7 @@ namespace Fraction
 
         public static explicit operator string(Fraction fraction)
         {
-            return fraction.ToString();
+            return fraction?.ToString();
         }
 
         public static implicit operator Fraction(double d)
@@ -130,7 +142,7 @@ namespace Fraction
             return FromDouble(d);
         }
 
-        public static implicit operator Fraction(string s)
+        public static explicit operator Fraction(string s)
         {
             return FromString(s);
         }
@@ -142,7 +154,7 @@ namespace Fraction
         public void Simplify()
         {
             var gcd = GetGreatestCommonDivisor();
-            Numerator /= gcd;
+            Numerator /= (long)gcd;
             Denominator /= gcd;
         }
 
@@ -153,11 +165,9 @@ namespace Fraction
             return frac;
         }
 
-        public int GetGreatestCommonDivisor()
+        public ulong GetGreatestCommonDivisor()
         {
-            return Convert.ToInt32(MathHelpers.GetGreatestCommonDivisor(
-                (uint)(Numerator < 0 ? Numerator * -1 : Numerator),
-                (uint)(Denominator < 0 ? Denominator * -1 : Denominator)));
+            return MathHelpers.GetGreatestCommonDivisor((ulong)(Numerator < 0 ? Numerator * -1 : Numerator), Denominator);
         }
         
         #endregion
@@ -176,6 +186,13 @@ namespace Fraction
 
         public static Fraction FromDouble(double d)
         {
+            long denominator = 1;
+            for (;d != Math.Round(d); d *= 2, denominator *= 2) { }
+            return new Fraction((int)d, denominator).Simplified();
+        }
+
+        public static Fraction FromDoubleOld(double d)
+        {
             var full = (int)d;
             var part = d - full;
             var tmp = part;
@@ -188,7 +205,7 @@ namespace Fraction
         {
             var values = s.Split('/');
             if (values.Length != 2) throw new InvalidCastException();
-            return new Fraction(Convert.ToInt32(values[0]), Convert.ToInt32(values[1]));
+            return new Fraction(Convert.ToInt64(values[0]), Convert.ToInt64(values[1]));
         }
 
         #endregion
