@@ -6,6 +6,8 @@ namespace Fraction
     public class Fraction
     {
         #region Properties
+
+        public static int Count { get; private set; } = 0;
         
         public long Numerator { private set; get; }
         
@@ -22,7 +24,7 @@ namespace Fraction
 
         #endregion
         
-        #region Constructors
+        #region Con- & Destructors
 
         public Fraction(long numerator, long denominator, bool simplify = true)
         {
@@ -35,6 +37,7 @@ namespace Fraction
             Numerator = numerator;
             Denominator = (ulong)denominator;
             if (simplify) Simplify();
+            Count++;
         }
 
         public Fraction(long numerator, ulong denominator, bool simplify = true)
@@ -43,6 +46,12 @@ namespace Fraction
             Numerator = numerator;
             Denominator = denominator;
             if (simplify) Simplify();
+            Count++;
+        }
+
+        ~Fraction()
+        {
+            Count--;
         }
         
         #endregion
