@@ -1,0 +1,681 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="vornameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="vornameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 10</value>
+  </data>
+  <data name="vornameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="vornameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="vornameLabel.Text" xml:space="preserve">
+    <value>Vorname:</value>
+  </data>
+  <data name="vornameLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;vornameLabel.Name" xml:space="preserve">
+    <value>vornameLabel</value>
+  </data>
+  <data name="&gt;&gt;vornameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;vornameLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;vornameLabel.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="nachnameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="nachnameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 10</value>
+  </data>
+  <data name="nachnameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 23</value>
+  </data>
+  <data name="nachnameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="nachnameLabel.Text" xml:space="preserve">
+    <value>Nachname:</value>
+  </data>
+  <data name="nachnameLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;nachnameLabel.Name" xml:space="preserve">
+    <value>nachnameLabel</value>
+  </data>
+  <data name="&gt;&gt;nachnameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nachnameLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;nachnameLabel.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="vornameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>123, 12</value>
+  </data>
+  <data name="vornameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 20</value>
+  </data>
+  <data name="vornameTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;vornameTextBox.Name" xml:space="preserve">
+    <value>vornameTextBox</value>
+  </data>
+  <data name="&gt;&gt;vornameTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;vornameTextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;vornameTextBox.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="schuleLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="schuleLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 36</value>
+  </data>
+  <data name="schuleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 23</value>
+  </data>
+  <data name="schuleLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="schuleLabel.Text" xml:space="preserve">
+    <value>Schule:</value>
+  </data>
+  <data name="schuleLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;schuleLabel.Name" xml:space="preserve">
+    <value>schuleLabel</value>
+  </data>
+  <data name="&gt;&gt;schuleLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;schuleLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;schuleLabel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="schulnameComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>123, 38</value>
+  </data>
+  <data name="schulnameComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>371, 21</value>
+  </data>
+  <data name="schulnameComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;schulnameComboBox.Name" xml:space="preserve">
+    <value>schulnameComboBox</value>
+  </data>
+  <data name="&gt;&gt;schulnameComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;schulnameComboBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;schulnameComboBox.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="nachnameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>370, 12</value>
+  </data>
+  <data name="nachnameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 20</value>
+  </data>
+  <data name="nachnameTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;nachnameTextBox.Name" xml:space="preserve">
+    <value>nachnameTextBox</value>
+  </data>
+  <data name="&gt;&gt;nachnameTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nachnameTextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;nachnameTextBox.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="schulstartLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="schulstartLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 63</value>
+  </data>
+  <data name="schulstartLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 23</value>
+  </data>
+  <data name="schulstartLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="schulstartLabel.Text" xml:space="preserve">
+    <value>An der Schule seit:</value>
+  </data>
+  <data name="schulstartLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;schulstartLabel.Name" xml:space="preserve">
+    <value>schulstartLabel</value>
+  </data>
+  <data name="&gt;&gt;schulstartLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;schulstartLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;schulstartLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;mehrAlsZehnJahreRadioButton.Name" xml:space="preserve">
+    <value>mehrAlsZehnJahreRadioButton</value>
+  </data>
+  <data name="&gt;&gt;mehrAlsZehnJahreRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mehrAlsZehnJahreRadioButton.Parent" xml:space="preserve">
+    <value>erfahrungenGroupBox</value>
+  </data>
+  <data name="&gt;&gt;mehrAlsZehnJahreRadioButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;fuenfBisNeunJahreRadioButton.Name" xml:space="preserve">
+    <value>fuenfBisNeunJahreRadioButton</value>
+  </data>
+  <data name="&gt;&gt;fuenfBisNeunJahreRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fuenfBisNeunJahreRadioButton.Parent" xml:space="preserve">
+    <value>erfahrungenGroupBox</value>
+  </data>
+  <data name="&gt;&gt;fuenfBisNeunJahreRadioButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;einBisVierJahreRadioButton.Name" xml:space="preserve">
+    <value>einBisVierJahreRadioButton</value>
+  </data>
+  <data name="&gt;&gt;einBisVierJahreRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;einBisVierJahreRadioButton.Parent" xml:space="preserve">
+    <value>erfahrungenGroupBox</value>
+  </data>
+  <data name="&gt;&gt;einBisVierJahreRadioButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;unterEinJahrRadioButton.Name" xml:space="preserve">
+    <value>unterEinJahrRadioButton</value>
+  </data>
+  <data name="&gt;&gt;unterEinJahrRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;unterEinJahrRadioButton.Parent" xml:space="preserve">
+    <value>erfahrungenGroupBox</value>
+  </data>
+  <data name="&gt;&gt;unterEinJahrRadioButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="erfahrungenGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 102</value>
+  </data>
+  <data name="erfahrungenGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 139</value>
+  </data>
+  <data name="erfahrungenGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="erfahrungenGroupBox.Text" xml:space="preserve">
+    <value>Erfahrungen</value>
+  </data>
+  <data name="&gt;&gt;erfahrungenGroupBox.Name" xml:space="preserve">
+    <value>erfahrungenGroupBox</value>
+  </data>
+  <data name="&gt;&gt;erfahrungenGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;erfahrungenGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;erfahrungenGroupBox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="mehrAlsZehnJahreRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="mehrAlsZehnJahreRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 109</value>
+  </data>
+  <data name="mehrAlsZehnJahreRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 24</value>
+  </data>
+  <data name="mehrAlsZehnJahreRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="mehrAlsZehnJahreRadioButton.Text" xml:space="preserve">
+    <value>mehr als 10 Jahre</value>
+  </data>
+  <data name="&gt;&gt;mehrAlsZehnJahreRadioButton.Name" xml:space="preserve">
+    <value>mehrAlsZehnJahreRadioButton</value>
+  </data>
+  <data name="&gt;&gt;mehrAlsZehnJahreRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mehrAlsZehnJahreRadioButton.Parent" xml:space="preserve">
+    <value>erfahrungenGroupBox</value>
+  </data>
+  <data name="&gt;&gt;mehrAlsZehnJahreRadioButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="fuenfBisNeunJahreRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="fuenfBisNeunJahreRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 79</value>
+  </data>
+  <data name="fuenfBisNeunJahreRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 24</value>
+  </data>
+  <data name="fuenfBisNeunJahreRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="fuenfBisNeunJahreRadioButton.Text" xml:space="preserve">
+    <value>5 bis 9 Jahre</value>
+  </data>
+  <data name="&gt;&gt;fuenfBisNeunJahreRadioButton.Name" xml:space="preserve">
+    <value>fuenfBisNeunJahreRadioButton</value>
+  </data>
+  <data name="&gt;&gt;fuenfBisNeunJahreRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fuenfBisNeunJahreRadioButton.Parent" xml:space="preserve">
+    <value>erfahrungenGroupBox</value>
+  </data>
+  <data name="&gt;&gt;fuenfBisNeunJahreRadioButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="einBisVierJahreRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="einBisVierJahreRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 49</value>
+  </data>
+  <data name="einBisVierJahreRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 24</value>
+  </data>
+  <data name="einBisVierJahreRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="einBisVierJahreRadioButton.Text" xml:space="preserve">
+    <value>1 bis 4 Jahre</value>
+  </data>
+  <data name="&gt;&gt;einBisVierJahreRadioButton.Name" xml:space="preserve">
+    <value>einBisVierJahreRadioButton</value>
+  </data>
+  <data name="&gt;&gt;einBisVierJahreRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;einBisVierJahreRadioButton.Parent" xml:space="preserve">
+    <value>erfahrungenGroupBox</value>
+  </data>
+  <data name="&gt;&gt;einBisVierJahreRadioButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="unterEinJahrRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="unterEinJahrRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="unterEinJahrRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 24</value>
+  </data>
+  <data name="unterEinJahrRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="unterEinJahrRadioButton.Text" xml:space="preserve">
+    <value>weniger als 1 Jahr</value>
+  </data>
+  <data name="&gt;&gt;unterEinJahrRadioButton.Name" xml:space="preserve">
+    <value>unterEinJahrRadioButton</value>
+  </data>
+  <data name="&gt;&gt;unterEinJahrRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;unterEinJahrRadioButton.Parent" xml:space="preserve">
+    <value>erfahrungenGroupBox</value>
+  </data>
+  <data name="&gt;&gt;unterEinJahrRadioButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="programmiersprachenCheckedListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 102</value>
+  </data>
+  <data name="programmiersprachenCheckedListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 124</value>
+  </data>
+  <data name="programmiersprachenCheckedListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;programmiersprachenCheckedListBox.Name" xml:space="preserve">
+    <value>programmiersprachenCheckedListBox</value>
+  </data>
+  <data name="&gt;&gt;programmiersprachenCheckedListBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;programmiersprachenCheckedListBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;programmiersprachenCheckedListBox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="zuruecksetzenButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="zuruecksetzenButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="zuruecksetzenButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>540, 240</value>
+  </data>
+  <data name="zuruecksetzenButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 23</value>
+  </data>
+  <data name="zuruecksetzenButton.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="zuruecksetzenButton.Text" xml:space="preserve">
+    <value>Zurücksetzen</value>
+  </data>
+  <data name="&gt;&gt;zuruecksetzenButton.Name" xml:space="preserve">
+    <value>zuruecksetzenButton</value>
+  </data>
+  <data name="&gt;&gt;zuruecksetzenButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;zuruecksetzenButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;zuruecksetzenButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="hinzufuegenButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="hinzufuegenButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="hinzufuegenButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>440, 240</value>
+  </data>
+  <data name="hinzufuegenButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 23</value>
+  </data>
+  <data name="hinzufuegenButton.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="hinzufuegenButton.Text" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="&gt;&gt;hinzufuegenButton.Name" xml:space="preserve">
+    <value>hinzufuegenButton</value>
+  </data>
+  <data name="&gt;&gt;hinzufuegenButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hinzufuegenButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;hinzufuegenButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="schulstartDateTimePicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>123, 65</value>
+  </data>
+  <data name="schulstartDateTimePicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>371, 20</value>
+  </data>
+  <data name="schulstartDateTimePicker.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;schulstartDateTimePicker.Name" xml:space="preserve">
+    <value>schulstartDateTimePicker</value>
+  </data>
+  <data name="&gt;&gt;schulstartDateTimePicker.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;schulstartDateTimePicker.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;schulstartDateTimePicker.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="schoolPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="schoolPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>500, 12</value>
+  </data>
+  <data name="schoolPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 74</value>
+  </data>
+  <data name="schoolPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="schoolPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;schoolPictureBox.Name" xml:space="preserve">
+    <value>schoolPictureBox</value>
+  </data>
+  <data name="&gt;&gt;schoolPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;schoolPictureBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;schoolPictureBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="allParticipantsListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>500, 102</value>
+  </data>
+  <data name="allParticipantsListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 95</value>
+  </data>
+  <data name="allParticipantsListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;allParticipantsListBox.Name" xml:space="preserve">
+    <value>allParticipantsListBox</value>
+  </data>
+  <data name="&gt;&gt;allParticipantsListBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;allParticipantsListBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;allParticipantsListBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="deleteSelectedParticipants.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="deleteSelectedParticipants.Location" type="System.Drawing.Point, System.Drawing">
+    <value>500, 203</value>
+  </data>
+  <data name="deleteSelectedParticipants.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 23</value>
+  </data>
+  <data name="deleteSelectedParticipants.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="deleteSelectedParticipants.Text" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="&gt;&gt;deleteSelectedParticipants.Name" xml:space="preserve">
+    <value>deleteSelectedParticipants</value>
+  </data>
+  <data name="&gt;&gt;deleteSelectedParticipants.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteSelectedParticipants.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;deleteSelectedParticipants.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>646, 275</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Lefo-Teilnehmer*innen</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
