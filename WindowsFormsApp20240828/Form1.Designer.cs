@@ -48,8 +48,13 @@
             this.schoolPictureBox = new System.Windows.Forms.PictureBox();
             this.allParticipantsListBox = new System.Windows.Forms.ListBox();
             this.deleteSelectedParticipants = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontsToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.erfahrungenGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schoolPictureBox)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // vornameLabel
@@ -173,6 +178,34 @@
             this.deleteSelectedParticipants.UseVisualStyleBackColor = true;
             this.deleteSelectedParticipants.Click += new System.EventHandler(this.deleteSelectedParticipants_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dateiToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Name = "menuStrip1";
+            // 
+            // dateiToolStripMenuItem
+            // 
+            this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fontsToolStripComboBox,
+            this.exitToolStripMenuItem});
+            this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
+            resources.ApplyResources(this.dateiToolStripMenuItem, "dateiToolStripMenuItem");
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // fontsToolStripComboBox
+            // 
+            this.fontsToolStripComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.fontsToolStripComboBox.Name = "fontsToolStripComboBox";
+            resources.ApplyResources(this.fontsToolStripComboBox, "fontsToolStripComboBox");
+            this.fontsToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.fontsToolStripComboBox_SelectedIndexChanged);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -192,13 +225,17 @@
             this.Controls.Add(this.vornameTextBox);
             this.Controls.Add(this.nachnameLabel);
             this.Controls.Add(this.vornameLabel);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.erfahrungenGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.schoolPictureBox)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,6 +262,10 @@
         private System.Windows.Forms.PictureBox schoolPictureBox;
         private System.Windows.Forms.ListBox allParticipantsListBox;
         private System.Windows.Forms.Button deleteSelectedParticipants;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox fontsToolStripComboBox;
     }
 }
 

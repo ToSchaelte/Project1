@@ -61,6 +61,9 @@ namespace WindowsFormsApp20240828
             if(File.Exists(XmlPath)) _participants.AddRange((List<Participant>)XmlHelper.DeserializeXml<List<Participant>>(XmlPath));
             
             ResetVisualizaiton();
+            fontsToolStripComboBox.Items.Clear();
+            fontsToolStripComboBox.Items.AddRange(FontFamily.Families.Select(ff => ff.Name).ToArray());
+            fontsToolStripComboBox.SelectedItem = "Arial";
         }
 
         private void FillSchulnamen()
@@ -149,6 +152,23 @@ namespace WindowsFormsApp20240828
                 XmlHelper.SerializeXml(_participants, XmlPath);
                 FillParticipantListBox();
             }
+        }
+
+        private void fontsToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (fontsToolStripComboBox.SelectedIndex < 0) return;
+            SetFont(this, FontFamily.Families[fontsToolStripComboBox.SelectedIndex]);
+        }
+
+        private void SetFont(Control control, FontFamily fontFamily)
+        {
+            control.Font = new Font(fontFamily, control.Font.Size, control.Font.Style);
+            foreach (var c in control.Controls.Cast<Control>()) SetFont(c, fontFamily);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="vornameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 10</value>
+    <value>12, 30</value>
   </data>
   <data name="vornameLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 23</value>
@@ -154,7 +154,7 @@
     <value>NoControl</value>
   </data>
   <data name="nachnameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>259, 10</value>
+    <value>259, 30</value>
   </data>
   <data name="nachnameLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 23</value>
@@ -181,7 +181,7 @@
     <value>13</value>
   </data>
   <data name="vornameTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>123, 12</value>
+    <value>123, 32</value>
   </data>
   <data name="vornameTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 20</value>
@@ -205,7 +205,7 @@
     <value>NoControl</value>
   </data>
   <data name="schuleLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 36</value>
+    <value>12, 56</value>
   </data>
   <data name="schuleLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 23</value>
@@ -232,7 +232,7 @@
     <value>11</value>
   </data>
   <data name="schulnameComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>123, 38</value>
+    <value>123, 58</value>
   </data>
   <data name="schulnameComboBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 21</value>
@@ -253,7 +253,7 @@
     <value>10</value>
   </data>
   <data name="nachnameTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>370, 12</value>
+    <value>370, 32</value>
   </data>
   <data name="nachnameTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 20</value>
@@ -277,7 +277,7 @@
     <value>NoControl</value>
   </data>
   <data name="schulstartLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 63</value>
+    <value>12, 83</value>
   </data>
   <data name="schulstartLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 23</value>
@@ -352,7 +352,7 @@
     <value>3</value>
   </data>
   <data name="erfahrungenGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 102</value>
+    <value>12, 122</value>
   </data>
   <data name="erfahrungenGroupBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 139</value>
@@ -374,6 +374,9 @@
   </data>
   <data name="&gt;&gt;erfahrungenGroupBox.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="mehrAlsZehnJahreRadioButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="mehrAlsZehnJahreRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -402,6 +405,9 @@
   <data name="&gt;&gt;mehrAlsZehnJahreRadioButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="fuenfBisNeunJahreRadioButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="fuenfBisNeunJahreRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -429,6 +435,9 @@
   <data name="&gt;&gt;fuenfBisNeunJahreRadioButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="einBisVierJahreRadioButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="einBisVierJahreRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -455,6 +464,9 @@
   </data>
   <data name="&gt;&gt;einBisVierJahreRadioButton.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="unterEinJahrRadioButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="unterEinJahrRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -484,10 +496,10 @@
     <value>3</value>
   </data>
   <data name="programmiersprachenCheckedListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>262, 102</value>
+    <value>262, 122</value>
   </data>
   <data name="programmiersprachenCheckedListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 124</value>
+    <value>232, 139</value>
   </data>
   <data name="programmiersprachenCheckedListBox.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -511,7 +523,7 @@
     <value>NoControl</value>
   </data>
   <data name="zuruecksetzenButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>540, 240</value>
+    <value>540, 273</value>
   </data>
   <data name="zuruecksetzenButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 23</value>
@@ -541,7 +553,7 @@
     <value>NoControl</value>
   </data>
   <data name="hinzufuegenButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>440, 240</value>
+    <value>440, 273</value>
   </data>
   <data name="hinzufuegenButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 23</value>
@@ -565,7 +577,7 @@
     <value>4</value>
   </data>
   <data name="schulstartDateTimePicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>123, 65</value>
+    <value>123, 85</value>
   </data>
   <data name="schulstartDateTimePicker.Size" type="System.Drawing.Size, System.Drawing">
     <value>371, 20</value>
@@ -589,7 +601,7 @@
     <value>NoControl</value>
   </data>
   <data name="schoolPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>500, 12</value>
+    <value>500, 32</value>
   </data>
   <data name="schoolPictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 74</value>
@@ -613,10 +625,10 @@
     <value>2</value>
   </data>
   <data name="allParticipantsListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>500, 102</value>
+    <value>500, 122</value>
   </data>
   <data name="allParticipantsListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 95</value>
+    <value>134, 108</value>
   </data>
   <data name="allParticipantsListBox.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -637,7 +649,7 @@
     <value>NoControl</value>
   </data>
   <data name="deleteSelectedParticipants.Location" type="System.Drawing.Point, System.Drawing">
-    <value>500, 203</value>
+    <value>500, 238</value>
   </data>
   <data name="deleteSelectedParticipants.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 23</value>
@@ -660,6 +672,48 @@
   <data name="&gt;&gt;deleteSelectedParticipants.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="fontsToolStripComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 23</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="dateiToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="dateiToolStripMenuItem.Text" xml:space="preserve">
+    <value>Datei</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>646, 24</value>
+  </data>
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -667,10 +721,28 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>646, 275</value>
+    <value>646, 308</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Lefo-Teilnehmer*innen</value>
+  </data>
+  <data name="&gt;&gt;dateiToolStripMenuItem.Name" xml:space="preserve">
+    <value>dateiToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;dateiToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
+    <value>exitToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fontsToolStripComboBox.Name" xml:space="preserve">
+    <value>fontsToolStripComboBox</value>
+  </data>
+  <data name="&gt;&gt;fontsToolStripComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>
