@@ -303,78 +303,6 @@
   <data name="&gt;&gt;schulstartLabel.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;mehrAlsZehnJahreRadioButton.Name" xml:space="preserve">
-    <value>mehrAlsZehnJahreRadioButton</value>
-  </data>
-  <data name="&gt;&gt;mehrAlsZehnJahreRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mehrAlsZehnJahreRadioButton.Parent" xml:space="preserve">
-    <value>erfahrungenGroupBox</value>
-  </data>
-  <data name="&gt;&gt;mehrAlsZehnJahreRadioButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;fuenfBisNeunJahreRadioButton.Name" xml:space="preserve">
-    <value>fuenfBisNeunJahreRadioButton</value>
-  </data>
-  <data name="&gt;&gt;fuenfBisNeunJahreRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fuenfBisNeunJahreRadioButton.Parent" xml:space="preserve">
-    <value>erfahrungenGroupBox</value>
-  </data>
-  <data name="&gt;&gt;fuenfBisNeunJahreRadioButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;einBisVierJahreRadioButton.Name" xml:space="preserve">
-    <value>einBisVierJahreRadioButton</value>
-  </data>
-  <data name="&gt;&gt;einBisVierJahreRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;einBisVierJahreRadioButton.Parent" xml:space="preserve">
-    <value>erfahrungenGroupBox</value>
-  </data>
-  <data name="&gt;&gt;einBisVierJahreRadioButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;unterEinJahrRadioButton.Name" xml:space="preserve">
-    <value>unterEinJahrRadioButton</value>
-  </data>
-  <data name="&gt;&gt;unterEinJahrRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;unterEinJahrRadioButton.Parent" xml:space="preserve">
-    <value>erfahrungenGroupBox</value>
-  </data>
-  <data name="&gt;&gt;unterEinJahrRadioButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="erfahrungenGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 122</value>
-  </data>
-  <data name="erfahrungenGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 139</value>
-  </data>
-  <data name="erfahrungenGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="erfahrungenGroupBox.Text" xml:space="preserve">
-    <value>Erfahrungen</value>
-  </data>
-  <data name="&gt;&gt;erfahrungenGroupBox.Name" xml:space="preserve">
-    <value>erfahrungenGroupBox</value>
-  </data>
-  <data name="&gt;&gt;erfahrungenGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;erfahrungenGroupBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;erfahrungenGroupBox.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="mehrAlsZehnJahreRadioButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -494,6 +422,30 @@
   </data>
   <data name="&gt;&gt;unterEinJahrRadioButton.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="erfahrungenGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 122</value>
+  </data>
+  <data name="erfahrungenGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 139</value>
+  </data>
+  <data name="erfahrungenGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="erfahrungenGroupBox.Text" xml:space="preserve">
+    <value>Erfahrungen</value>
+  </data>
+  <data name="&gt;&gt;erfahrungenGroupBox.Name" xml:space="preserve">
+    <value>erfahrungenGroupBox</value>
+  </data>
+  <data name="&gt;&gt;erfahrungenGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;erfahrungenGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;erfahrungenGroupBox.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="programmiersprachenCheckedListBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>262, 122</value>
@@ -732,17 +684,17 @@
   <data name="&gt;&gt;dateiToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
-    <value>exitToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;fontsToolStripComboBox.Name" xml:space="preserve">
     <value>fontsToolStripComboBox</value>
   </data>
   <data name="&gt;&gt;fontsToolStripComboBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
+    <value>exitToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>

@@ -50,8 +50,8 @@
             this.deleteSelectedParticipants = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontsToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.erfahrungenGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schoolPictureBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -135,6 +135,7 @@
             // 
             // programmiersprachenCheckedListBox
             // 
+            this.programmiersprachenCheckedListBox.CheckOnClick = true;
             this.programmiersprachenCheckedListBox.FormattingEnabled = true;
             resources.ApplyResources(this.programmiersprachenCheckedListBox, "programmiersprachenCheckedListBox");
             this.programmiersprachenCheckedListBox.Name = "programmiersprachenCheckedListBox";
@@ -193,18 +194,18 @@
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
             resources.ApplyResources(this.dateiToolStripMenuItem, "dateiToolStripMenuItem");
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
             // fontsToolStripComboBox
             // 
             this.fontsToolStripComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fontsToolStripComboBox.Name = "fontsToolStripComboBox";
             resources.ApplyResources(this.fontsToolStripComboBox, "fontsToolStripComboBox");
             this.fontsToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.fontsToolStripComboBox_SelectedIndexChanged);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // Form1
             // 

@@ -13,26 +13,26 @@ namespace WindowsFormsApp20240828
 {
     public partial class Form1 : Form
     {
-        private readonly Dictionary<string, string> schools = new Dictionary<string, string>
+        private readonly Dictionary<string, Image> schools = new Dictionary<string, Image>
         {
-            { "BK am Haspel", "amHaspel" },
-            { "BK Niederberg", "Niederberg" },
-            { "BK Technik Remscheid", "Remscheid" },
-            { "Heinz-Nixdorf-BK", "HeinzNixdorf" },
-            { "RW BK Essen", "RWEssen" },
-            { "BK Wesel", "Wesel" },
-            { "BK Siegen", "Siegen" },
-            { "BK Witten", "Witten" },
-            { "BK Solingen", "Solingen" },
-            { "Heinrich-Hertz-BK Bonn", "HeinrichHertzBonn" },
-            { "Heinrich-Hertz-BK Ddorf", "HeinrichHertzDdorf" },
-            { "Bertholt-Brecht-BK", "BertholdBrecht" },
-            { "BK Duisburg-Mitte", "Duisburg" },
-            { "Erich-Gutenberg-BK", "ErichGutenberg" },
-            { "BK Geschwister-Scholl", "Leverkusen" },
-            { "BK Oberberg", "Oberberg" },
-            { "Lippe-BK", "Lippe" },
-            { "BK Hilden", "Hilden" }
+            { "BK am Haspel", Images.amHaspel },
+            { "BK Niederberg", Images.Niederberg },
+            { "BK Technik Remscheid", Images.Remscheid },
+            { "Heinz-Nixdorf-BK", Images.HeinzNixdorf },
+            { "RW BK Essen", Images.RWEssen },
+            { "BK Wesel", Images.Wesel },
+            { "BK Siegen", Images.Siegen },
+            { "BK Witten", Images.Witten },
+            { "BK Solingen", Images.Solingen },
+            { "Heinrich-Hertz-BK Bonn", Images.HeinrichHertzBonn },
+            { "Heinrich-Hertz-BK Ddorf", Images.HeinrichHertzDdorf },
+            { "Bertholt-Brecht-BK", Images.BertholdBrecht },
+            { "BK Duisburg-Mitte", Images.Duisburg },
+            { "Erich-Gutenberg-BK", Images.ErichGutenberg },
+            { "BK Geschwister-Scholl", Images.Leverkusen },
+            { "BK Oberberg", Images.Oberberg },
+            { "Lippe-BK", Images.Lippe },
+            { "BK Hilden", Images.Hilden }
         };
 
         private readonly List<string> programmingLanguages = new List<string>
@@ -95,9 +95,9 @@ namespace WindowsFormsApp20240828
 
         private void schulnameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var image = Images.ResourceManager.GetObject(schools.FirstOrDefault(s => s.Key == schulnameComboBox.SelectedItem.ToString()).Value ?? string.Empty);
+            var image = schools.FirstOrDefault(s => s.Key == schulnameComboBox.SelectedItem.ToString()).Value;
             if (image is null) return;
-            schoolPictureBox.Image = (Image)image;
+            schoolPictureBox.Image = image;
         }
 
         private void hinzufuegenButton_Click(object sender, EventArgs e)

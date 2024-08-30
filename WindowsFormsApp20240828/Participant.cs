@@ -18,11 +18,14 @@ namespace WindowsFormsApp20240828
         [XmlAttribute]
         public string School { get; set; } = string.Empty;
 
+        [XmlAttribute("DateOfSchoolEntry")]
         public DateTime SchoolEntry { get; set; } = DateTime.Now;
 
-        [XmlAttribute]
+        [XmlAttribute("ExperienceInYears")]
         public Enums.Experience Experience { get; set; }
 
+        [XmlArray("ProgrammingLanguages")]
+        [XmlArrayItem("Language")]
         public List<string> ProgrammingLanguages { get; set; } = new List<string>();
 
         public Participant()
