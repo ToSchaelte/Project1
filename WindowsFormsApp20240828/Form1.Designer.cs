@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp20240828
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,136 +28,142 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.vornameLabel = new System.Windows.Forms.Label();
-            this.nachnameLabel = new System.Windows.Forms.Label();
-            this.vornameTextBox = new System.Windows.Forms.TextBox();
-            this.schuleLabel = new System.Windows.Forms.Label();
-            this.schulnameComboBox = new System.Windows.Forms.ComboBox();
-            this.nachnameTextBox = new System.Windows.Forms.TextBox();
-            this.schulstartLabel = new System.Windows.Forms.Label();
-            this.erfahrungenGroupBox = new System.Windows.Forms.GroupBox();
-            this.mehrAlsZehnJahreRadioButton = new System.Windows.Forms.RadioButton();
-            this.fuenfBisNeunJahreRadioButton = new System.Windows.Forms.RadioButton();
-            this.einBisVierJahreRadioButton = new System.Windows.Forms.RadioButton();
-            this.unterEinJahrRadioButton = new System.Windows.Forms.RadioButton();
-            this.programmiersprachenCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.zuruecksetzenButton = new System.Windows.Forms.Button();
-            this.hinzufuegenButton = new System.Windows.Forms.Button();
-            this.schulstartDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.firstNameLabel = new System.Windows.Forms.Label();
+            this.lastNameLabel = new System.Windows.Forms.Label();
+            this.firstNameTextBox = new System.Windows.Forms.TextBox();
+            this.schoolLabel = new System.Windows.Forms.Label();
+            this.schoolComboBox = new System.Windows.Forms.ComboBox();
+            this.lastNameTextBox = new System.Windows.Forms.TextBox();
+            this.schoolstartLabel = new System.Windows.Forms.Label();
+            this.experienceGroupBox = new System.Windows.Forms.GroupBox();
+            this.moreThanTenYearsRadioButton = new System.Windows.Forms.RadioButton();
+            this.fiveToNineYearsRadioButton = new System.Windows.Forms.RadioButton();
+            this.oneToFourYearsRadioButton = new System.Windows.Forms.RadioButton();
+            this.lessThanOneYearRadioButton = new System.Windows.Forms.RadioButton();
+            this.programmingLanguagesCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.resetButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
+            this.schoolstartDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.schoolPictureBox = new System.Windows.Forms.PictureBox();
             this.allParticipantsListBox = new System.Windows.Forms.ListBox();
             this.deleteSelectedParticipants = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fontsToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.erfahrungenGroupBox.SuspendLayout();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.foreColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.activateBommertModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetToDefaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.experienceGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schoolPictureBox)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.mainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // vornameLabel
+            // firstNameLabel
             // 
-            resources.ApplyResources(this.vornameLabel, "vornameLabel");
-            this.vornameLabel.Name = "vornameLabel";
+            resources.ApplyResources(this.firstNameLabel, "firstNameLabel");
+            this.firstNameLabel.Name = "firstNameLabel";
             // 
-            // nachnameLabel
+            // lastNameLabel
             // 
-            resources.ApplyResources(this.nachnameLabel, "nachnameLabel");
-            this.nachnameLabel.Name = "nachnameLabel";
+            resources.ApplyResources(this.lastNameLabel, "lastNameLabel");
+            this.lastNameLabel.Name = "lastNameLabel";
             // 
-            // vornameTextBox
+            // firstNameTextBox
             // 
-            resources.ApplyResources(this.vornameTextBox, "vornameTextBox");
-            this.vornameTextBox.Name = "vornameTextBox";
+            resources.ApplyResources(this.firstNameTextBox, "firstNameTextBox");
+            this.firstNameTextBox.Name = "firstNameTextBox";
             // 
-            // schuleLabel
+            // schoolLabel
             // 
-            resources.ApplyResources(this.schuleLabel, "schuleLabel");
-            this.schuleLabel.Name = "schuleLabel";
+            resources.ApplyResources(this.schoolLabel, "schoolLabel");
+            this.schoolLabel.Name = "schoolLabel";
             // 
-            // schulnameComboBox
+            // schoolComboBox
             // 
-            this.schulnameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.schulnameComboBox.FormattingEnabled = true;
-            resources.ApplyResources(this.schulnameComboBox, "schulnameComboBox");
-            this.schulnameComboBox.Name = "schulnameComboBox";
-            this.schulnameComboBox.SelectedIndexChanged += new System.EventHandler(this.schulnameComboBox_SelectedIndexChanged);
+            this.schoolComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.schoolComboBox.FormattingEnabled = true;
+            resources.ApplyResources(this.schoolComboBox, "schoolComboBox");
+            this.schoolComboBox.Name = "schoolComboBox";
+            this.schoolComboBox.SelectedIndexChanged += new System.EventHandler(this.schoolComboBox_OnSelectedIndexChanged);
             // 
-            // nachnameTextBox
+            // lastNameTextBox
             // 
-            resources.ApplyResources(this.nachnameTextBox, "nachnameTextBox");
-            this.nachnameTextBox.Name = "nachnameTextBox";
+            resources.ApplyResources(this.lastNameTextBox, "lastNameTextBox");
+            this.lastNameTextBox.Name = "lastNameTextBox";
             // 
-            // schulstartLabel
+            // schoolstartLabel
             // 
-            resources.ApplyResources(this.schulstartLabel, "schulstartLabel");
-            this.schulstartLabel.Name = "schulstartLabel";
+            resources.ApplyResources(this.schoolstartLabel, "schoolstartLabel");
+            this.schoolstartLabel.Name = "schoolstartLabel";
             // 
-            // erfahrungenGroupBox
+            // experienceGroupBox
             // 
-            this.erfahrungenGroupBox.Controls.Add(this.mehrAlsZehnJahreRadioButton);
-            this.erfahrungenGroupBox.Controls.Add(this.fuenfBisNeunJahreRadioButton);
-            this.erfahrungenGroupBox.Controls.Add(this.einBisVierJahreRadioButton);
-            this.erfahrungenGroupBox.Controls.Add(this.unterEinJahrRadioButton);
-            resources.ApplyResources(this.erfahrungenGroupBox, "erfahrungenGroupBox");
-            this.erfahrungenGroupBox.Name = "erfahrungenGroupBox";
-            this.erfahrungenGroupBox.TabStop = false;
+            this.experienceGroupBox.Controls.Add(this.moreThanTenYearsRadioButton);
+            this.experienceGroupBox.Controls.Add(this.fiveToNineYearsRadioButton);
+            this.experienceGroupBox.Controls.Add(this.oneToFourYearsRadioButton);
+            this.experienceGroupBox.Controls.Add(this.lessThanOneYearRadioButton);
+            resources.ApplyResources(this.experienceGroupBox, "experienceGroupBox");
+            this.experienceGroupBox.Name = "experienceGroupBox";
+            this.experienceGroupBox.TabStop = false;
             // 
-            // mehrAlsZehnJahreRadioButton
+            // moreThanTenYearsRadioButton
             // 
-            resources.ApplyResources(this.mehrAlsZehnJahreRadioButton, "mehrAlsZehnJahreRadioButton");
-            this.mehrAlsZehnJahreRadioButton.Name = "mehrAlsZehnJahreRadioButton";
-            this.mehrAlsZehnJahreRadioButton.TabStop = true;
-            this.mehrAlsZehnJahreRadioButton.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.moreThanTenYearsRadioButton, "moreThanTenYearsRadioButton");
+            this.moreThanTenYearsRadioButton.Name = "moreThanTenYearsRadioButton";
+            this.moreThanTenYearsRadioButton.TabStop = true;
+            this.moreThanTenYearsRadioButton.UseVisualStyleBackColor = true;
             // 
-            // fuenfBisNeunJahreRadioButton
+            // fiveToNineYearsRadioButton
             // 
-            resources.ApplyResources(this.fuenfBisNeunJahreRadioButton, "fuenfBisNeunJahreRadioButton");
-            this.fuenfBisNeunJahreRadioButton.Name = "fuenfBisNeunJahreRadioButton";
-            this.fuenfBisNeunJahreRadioButton.TabStop = true;
-            this.fuenfBisNeunJahreRadioButton.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.fiveToNineYearsRadioButton, "fiveToNineYearsRadioButton");
+            this.fiveToNineYearsRadioButton.Name = "fiveToNineYearsRadioButton";
+            this.fiveToNineYearsRadioButton.TabStop = true;
+            this.fiveToNineYearsRadioButton.UseVisualStyleBackColor = true;
             // 
-            // einBisVierJahreRadioButton
+            // oneToFourYearsRadioButton
             // 
-            resources.ApplyResources(this.einBisVierJahreRadioButton, "einBisVierJahreRadioButton");
-            this.einBisVierJahreRadioButton.Name = "einBisVierJahreRadioButton";
-            this.einBisVierJahreRadioButton.TabStop = true;
-            this.einBisVierJahreRadioButton.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.oneToFourYearsRadioButton, "oneToFourYearsRadioButton");
+            this.oneToFourYearsRadioButton.Name = "oneToFourYearsRadioButton";
+            this.oneToFourYearsRadioButton.TabStop = true;
+            this.oneToFourYearsRadioButton.UseVisualStyleBackColor = true;
             // 
-            // unterEinJahrRadioButton
+            // lessThanOneYearRadioButton
             // 
-            resources.ApplyResources(this.unterEinJahrRadioButton, "unterEinJahrRadioButton");
-            this.unterEinJahrRadioButton.Name = "unterEinJahrRadioButton";
-            this.unterEinJahrRadioButton.TabStop = true;
-            this.unterEinJahrRadioButton.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.lessThanOneYearRadioButton, "lessThanOneYearRadioButton");
+            this.lessThanOneYearRadioButton.Name = "lessThanOneYearRadioButton";
+            this.lessThanOneYearRadioButton.TabStop = true;
+            this.lessThanOneYearRadioButton.UseVisualStyleBackColor = true;
             // 
-            // programmiersprachenCheckedListBox
+            // programmingLanguagesCheckedListBox
             // 
-            this.programmiersprachenCheckedListBox.CheckOnClick = true;
-            this.programmiersprachenCheckedListBox.FormattingEnabled = true;
-            resources.ApplyResources(this.programmiersprachenCheckedListBox, "programmiersprachenCheckedListBox");
-            this.programmiersprachenCheckedListBox.Name = "programmiersprachenCheckedListBox";
+            this.programmingLanguagesCheckedListBox.CheckOnClick = true;
+            this.programmingLanguagesCheckedListBox.FormattingEnabled = true;
+            resources.ApplyResources(this.programmingLanguagesCheckedListBox, "programmingLanguagesCheckedListBox");
+            this.programmingLanguagesCheckedListBox.Name = "programmingLanguagesCheckedListBox";
             // 
-            // zuruecksetzenButton
+            // resetButton
             // 
-            resources.ApplyResources(this.zuruecksetzenButton, "zuruecksetzenButton");
-            this.zuruecksetzenButton.Name = "zuruecksetzenButton";
-            this.zuruecksetzenButton.UseVisualStyleBackColor = true;
-            this.zuruecksetzenButton.Click += new System.EventHandler(this.zuruecksetzenButton_Click);
+            resources.ApplyResources(this.resetButton, "resetButton");
+            this.resetButton.Name = "resetButton";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.zuruecksetzenButton_Click);
             // 
-            // hinzufuegenButton
+            // addButton
             // 
-            resources.ApplyResources(this.hinzufuegenButton, "hinzufuegenButton");
-            this.hinzufuegenButton.Name = "hinzufuegenButton";
-            this.hinzufuegenButton.UseVisualStyleBackColor = true;
-            this.hinzufuegenButton.Click += new System.EventHandler(this.hinzufuegenButton_Click);
+            resources.ApplyResources(this.addButton, "addButton");
+            this.addButton.Name = "addButton";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_OnClick);
             // 
-            // schulstartDateTimePicker
+            // schoolstartDateTimePicker
             // 
-            resources.ApplyResources(this.schulstartDateTimePicker, "schulstartDateTimePicker");
-            this.schulstartDateTimePicker.Name = "schulstartDateTimePicker";
+            resources.ApplyResources(this.schoolstartDateTimePicker, "schoolstartDateTimePicker");
+            this.schoolstartDateTimePicker.Name = "schoolstartDateTimePicker";
             // 
             // schoolPictureBox
             // 
@@ -179,27 +185,28 @@
             this.deleteSelectedParticipants.UseVisualStyleBackColor = true;
             this.deleteSelectedParticipants.Click += new System.EventHandler(this.deleteSelectedParticipants_Click);
             // 
-            // menuStrip1
+            // mainMenuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dateiToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
-            this.menuStrip1.Name = "menuStrip1";
+            this.mainMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.viewToolStripMenuItem});
+            resources.ApplyResources(this.mainMenuStrip, "mainMenuStrip");
+            this.mainMenuStrip.Name = "mainMenuStrip";
             // 
-            // dateiToolStripMenuItem
+            // fileToolStripMenuItem
             // 
-            this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fontsToolStripComboBox,
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportToolStripMenuItem,
             this.exitToolStripMenuItem});
-            this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
-            resources.ApplyResources(this.dateiToolStripMenuItem, "dateiToolStripMenuItem");
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
             // 
-            // fontsToolStripComboBox
+            // exportToolStripMenuItem
             // 
-            this.fontsToolStripComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.fontsToolStripComboBox.Name = "fontsToolStripComboBox";
-            resources.ApplyResources(this.fontsToolStripComboBox, "fontsToolStripComboBox");
-            this.fontsToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.fontsToolStripComboBox_SelectedIndexChanged);
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            resources.ApplyResources(this.exportToolStripMenuItem, "exportToolStripMenuItem");
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportierenToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -207,36 +214,78 @@
             resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // Form1
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fontToolStripMenuItem,
+            this.backgroundColorToolStripMenuItem,
+            this.foreColorToolStripMenuItem,
+            this.activateBommertModeToolStripMenuItem,
+            this.resetToDefaultToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            resources.ApplyResources(this.viewToolStripMenuItem, "viewToolStripMenuItem");
+            // 
+            // fontToolStripMenuItem
+            // 
+            this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
+            resources.ApplyResources(this.fontToolStripMenuItem, "fontToolStripMenuItem");
+            this.fontToolStripMenuItem.Click += new System.EventHandler(this.schriftartToolStripMenuItem_Click);
+            // 
+            // backgroundColorToolStripMenuItem
+            // 
+            this.backgroundColorToolStripMenuItem.Name = "backgroundColorToolStripMenuItem";
+            resources.ApplyResources(this.backgroundColorToolStripMenuItem, "backgroundColorToolStripMenuItem");
+            this.backgroundColorToolStripMenuItem.Click += new System.EventHandler(this.hintergrundfarbeToolStripMenuItem_Click);
+            // 
+            // foreColorToolStripMenuItem
+            // 
+            this.foreColorToolStripMenuItem.Name = "foreColorToolStripMenuItem";
+            resources.ApplyResources(this.foreColorToolStripMenuItem, "foreColorToolStripMenuItem");
+            this.foreColorToolStripMenuItem.Click += new System.EventHandler(this.schriftfarbeToolStripMenuItem_Click);
+            // 
+            // activateBommertModeToolStripMenuItem
+            // 
+            this.activateBommertModeToolStripMenuItem.Name = "activateBommertModeToolStripMenuItem";
+            resources.ApplyResources(this.activateBommertModeToolStripMenuItem, "activateBommertModeToolStripMenuItem");
+            this.activateBommertModeToolStripMenuItem.Click += new System.EventHandler(this.enterBommertModeToolStripMenuItem_Click);
+            // 
+            // resetToDefaultToolStripMenuItem
+            // 
+            this.resetToDefaultToolStripMenuItem.Name = "resetToDefaultToolStripMenuItem";
+            resources.ApplyResources(this.resetToDefaultToolStripMenuItem, "resetToDefaultToolStripMenuItem");
+            this.resetToDefaultToolStripMenuItem.Click += new System.EventHandler(this.zuDefaultToolStripMenuItem_Click);
+            // 
+            // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.deleteSelectedParticipants);
             this.Controls.Add(this.allParticipantsListBox);
             this.Controls.Add(this.schoolPictureBox);
-            this.Controls.Add(this.schulstartDateTimePicker);
-            this.Controls.Add(this.hinzufuegenButton);
-            this.Controls.Add(this.zuruecksetzenButton);
-            this.Controls.Add(this.programmiersprachenCheckedListBox);
-            this.Controls.Add(this.erfahrungenGroupBox);
-            this.Controls.Add(this.schulstartLabel);
-            this.Controls.Add(this.nachnameTextBox);
-            this.Controls.Add(this.schulnameComboBox);
-            this.Controls.Add(this.schuleLabel);
-            this.Controls.Add(this.vornameTextBox);
-            this.Controls.Add(this.nachnameLabel);
-            this.Controls.Add(this.vornameLabel);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.schoolstartDateTimePicker);
+            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.resetButton);
+            this.Controls.Add(this.programmingLanguagesCheckedListBox);
+            this.Controls.Add(this.experienceGroupBox);
+            this.Controls.Add(this.schoolstartLabel);
+            this.Controls.Add(this.lastNameTextBox);
+            this.Controls.Add(this.schoolComboBox);
+            this.Controls.Add(this.schoolLabel);
+            this.Controls.Add(this.firstNameTextBox);
+            this.Controls.Add(this.lastNameLabel);
+            this.Controls.Add(this.firstNameLabel);
+            this.Controls.Add(this.mainMenuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.mainMenuStrip;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.ShowIcon = false;
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.erfahrungenGroupBox.ResumeLayout(false);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.OnLoad);
+            this.experienceGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.schoolPictureBox)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mainMenuStrip.ResumeLayout(false);
+            this.mainMenuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,29 +293,35 @@
 
         #endregion
 
-        private System.Windows.Forms.Label vornameLabel;
-        private System.Windows.Forms.Label nachnameLabel;
-        private System.Windows.Forms.TextBox vornameTextBox;
-        private System.Windows.Forms.Label schuleLabel;
-        private System.Windows.Forms.ComboBox schulnameComboBox;
-        private System.Windows.Forms.TextBox nachnameTextBox;
-        private System.Windows.Forms.Label schulstartLabel;
-        private System.Windows.Forms.GroupBox erfahrungenGroupBox;
-        private System.Windows.Forms.RadioButton unterEinJahrRadioButton;
-        private System.Windows.Forms.RadioButton mehrAlsZehnJahreRadioButton;
-        private System.Windows.Forms.RadioButton fuenfBisNeunJahreRadioButton;
-        private System.Windows.Forms.RadioButton einBisVierJahreRadioButton;
-        private System.Windows.Forms.CheckedListBox programmiersprachenCheckedListBox;
-        private System.Windows.Forms.Button zuruecksetzenButton;
-        private System.Windows.Forms.Button hinzufuegenButton;
-        private System.Windows.Forms.DateTimePicker schulstartDateTimePicker;
+        private System.Windows.Forms.Label firstNameLabel;
+        private System.Windows.Forms.Label lastNameLabel;
+        private System.Windows.Forms.TextBox firstNameTextBox;
+        private System.Windows.Forms.Label schoolLabel;
+        private System.Windows.Forms.ComboBox schoolComboBox;
+        private System.Windows.Forms.TextBox lastNameTextBox;
+        private System.Windows.Forms.Label schoolstartLabel;
+        private System.Windows.Forms.GroupBox experienceGroupBox;
+        private System.Windows.Forms.RadioButton lessThanOneYearRadioButton;
+        private System.Windows.Forms.RadioButton moreThanTenYearsRadioButton;
+        private System.Windows.Forms.RadioButton fiveToNineYearsRadioButton;
+        private System.Windows.Forms.RadioButton oneToFourYearsRadioButton;
+        private System.Windows.Forms.CheckedListBox programmingLanguagesCheckedListBox;
+        private System.Windows.Forms.Button resetButton;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.DateTimePicker schoolstartDateTimePicker;
         private System.Windows.Forms.PictureBox schoolPictureBox;
         private System.Windows.Forms.ListBox allParticipantsListBox;
         private System.Windows.Forms.Button deleteSelectedParticipants;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem dateiToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip mainMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripComboBox fontsToolStripComboBox;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fontToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backgroundColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem foreColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem activateBommertModeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resetToDefaultToolStripMenuItem;
     }
 }
 

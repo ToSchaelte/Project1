@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="TheEntryWillNotBeSaved_period" xml:space="preserve">
+        <value>The entry will not be saved.</value>
+    </data>
+    <data name="YourDataIsInvalid_period" xml:space="preserve">
+        <value>Your data is invalid.</value>
+    </data>
+    <data name="TheEntryAlreadyExists" xml:space="preserve">
+        <value>The entry already exists</value>
+    </data>
+    <data name="USureAboutThat_question" xml:space="preserve">
+        <value>U sure about that?</value>
+    </data>
+    <data name="DoYouWantToDeleteAllData_question" xml:space="preserve">
+        <value>Do you want to delete all data?</value>
+    </data>
+    <data name="DeleteParticipants" xml:space="preserve">
+        <value>Delete participants</value>
+    </data>
+    <data name="DoYouReallyWantToDeleteTheFollowingParticipants_question" xml:space="preserve">
+        <value>Do you really want to delete the following participants?</value>
+    </data>
+    <data name="InvalidData" xml:space="preserve">
+        <value>Invalid data</value>
+    </data>
+    <data name="AParticipantWithThisNameAlreadyExists_period" xml:space="preserve">
+        <value>A participant with this name already exists.</value>
+    </data>
+</root>

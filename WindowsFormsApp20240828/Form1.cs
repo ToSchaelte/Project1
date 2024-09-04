@@ -1,174 +1,219 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp20240828
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        private readonly Dictionary<string, Image> schools = new Dictionary<string, Image>
-        {
-            { "BK am Haspel", Images.amHaspel },
-            { "BK Niederberg", Images.Niederberg },
-            { "BK Technik Remscheid", Images.Remscheid },
-            { "Heinz-Nixdorf-BK", Images.HeinzNixdorf },
-            { "RW BK Essen", Images.RWEssen },
-            { "BK Wesel", Images.Wesel },
-            { "BK Siegen", Images.Siegen },
-            { "BK Witten", Images.Witten },
-            { "BK Solingen", Images.Solingen },
-            { "Heinrich-Hertz-BK Bonn", Images.HeinrichHertzBonn },
-            { "Heinrich-Hertz-BK Ddorf", Images.HeinrichHertzDdorf },
-            { "Bertholt-Brecht-BK", Images.BertholdBrecht },
-            { "BK Duisburg-Mitte", Images.Duisburg },
-            { "Erich-Gutenberg-BK", Images.ErichGutenberg },
-            { "BK Geschwister-Scholl", Images.Leverkusen },
-            { "BK Oberberg", Images.Oberberg },
-            { "Lippe-BK", Images.Lippe },
-            { "BK Hilden", Images.Hilden }
-        };
-
-        private readonly List<string> programmingLanguages = new List<string>
-        {
-                "Cobol",
-                "Basic",
-                "C",
-                "C++",
-                "Delphi",
-                "Java",
-                "C#"
-        };
-
-        private readonly List<Participant> _participants = new List<Participant>();
-
-        private string XmlPath => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Participants.xml");
-
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+            StaticProperties.DefaultBackColor = StaticProperties.Config.BackColor = BackColor;
+            StaticProperties.DefaultForeColor = StaticProperties.Config.ForeColor = ForeColor;
+            StaticProperties.Config.Font = Font;
+
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void OnLoad(object sender, EventArgs e)
         {
-            _participants.Clear();
-            if(File.Exists(XmlPath)) _participants.AddRange((List<Participant>)XmlHelper.DeserializeXml<List<Participant>>(XmlPath));
-            
+            StaticProperties.Participants.Clear();
+            if (File.Exists(StaticProperties.ParticipantsPath)) StaticProperties.Participants.AddRange((List<Participant>)XmlHelper.DeserializeXml<List<Participant>>(StaticProperties.ParticipantsPath));
+            if (File.Exists(StaticProperties.ConfigPath)) StaticProperties.Config = (Configuration)XmlHelper.DeserializeXml<Configuration>(StaticProperties.ConfigPath);
+
             ResetVisualizaiton();
-            fontsToolStripComboBox.Items.Clear();
-            fontsToolStripComboBox.Items.AddRange(FontFamily.Families.Select(ff => ff.Name).ToArray());
-            fontsToolStripComboBox.SelectedItem = "Arial";
         }
 
-        private void FillSchulnamen()
+        private void FillSchoolComboBox()
         {
-            schulnameComboBox.Items.Clear();
-            schulnameComboBox.Items.AddRange(schools.Keys.OrderBy(s => s).ToArray());
-            schulnameComboBox.SelectedIndex = 0;
+            schoolComboBox.Items.Clear();
+            schoolComboBox.Items.AddRange(StaticProperties.Schools.Keys.OrderBy(s => s).ToArray());
+            schoolComboBox.SelectedIndex = 0;
         }
 
-        private void FillProgrammiersprachen()
+        private void FillProgrammingLanguagesCheckedListBox()
         {
-            programmiersprachenCheckedListBox.Items.Clear();
-            programmiersprachenCheckedListBox.Items.AddRange(programmingLanguages.OrderBy(s => s).ToArray());
+            programmingLanguagesCheckedListBox.Items.Clear();
+            programmingLanguagesCheckedListBox.Items.AddRange(StaticProperties.ProgrammingLanguages.OrderBy(s => s).ToArray());
         }
 
         private void ResetVisualizaiton()
         {
-            FillSchulnamen();
-            FillProgrammiersprachen();
+            SetColors();
+            SetFont(this, StaticProperties.Config.Font);
+            FillSchoolComboBox();
+            FillProgrammingLanguagesCheckedListBox();
             FillParticipantListBox();
-            vornameTextBox.Text = string.Empty;
-            nachnameTextBox.Text = string.Empty;
-            schulstartDateTimePicker.Value = DateTime.Now;
-            foreach (var item in erfahrungenGroupBox.Controls)
+            firstNameTextBox.Text = string.Empty;
+            lastNameTextBox.Text = string.Empty;
+            schoolstartDateTimePicker.Value = DateTime.Now;
+            foreach (var item in experienceGroupBox.Controls.Cast<Control>().Where(c => c is RadioButton).Cast<RadioButton>())
             {
-                if (item is RadioButton rb) rb.Checked = false;
+                item.Checked = false;
             }
         }
 
-        private void schulnameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void SetColors()
         {
-            var image = schools.FirstOrDefault(s => s.Key == schulnameComboBox.SelectedItem.ToString()).Value;
+            SetBackColor(this, StaticProperties.Config.BackColor);
+            SetForeColor(this, StaticProperties.Config.ForeColor);
+        }
+
+        private void schoolComboBox_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            var image = StaticProperties.Schools.FirstOrDefault(s => s.Key == schoolComboBox.SelectedItem.ToString()).Value;
             if (image is null) return;
             schoolPictureBox.Image = image;
         }
 
-        private void hinzufuegenButton_Click(object sender, EventArgs e)
+        private void addButton_OnClick(object sender, EventArgs e)
         {
             Enums.Experience? exp = null;
-            if (unterEinJahrRadioButton.Checked) exp = Enums.Experience.LessThanOne;
-            else if (einBisVierJahreRadioButton.Checked) exp = Enums.Experience.OneToFour;
-            else if (fuenfBisNeunJahreRadioButton.Checked) exp = Enums.Experience.FiveToNine;
-            else if (mehrAlsZehnJahreRadioButton.Checked) exp = Enums.Experience.MoreThanTen;
+            if (lessThanOneYearRadioButton.Checked) exp = Enums.Experience.LessThanOne;
+            else if (oneToFourYearsRadioButton.Checked) exp = Enums.Experience.OneToFour;
+            else if (fiveToNineYearsRadioButton.Checked) exp = Enums.Experience.FiveToNine;
+            else if (moreThanTenYearsRadioButton.Checked) exp = Enums.Experience.MoreThanTen;
 
-            if (string.IsNullOrEmpty(vornameTextBox.Text) || string.IsNullOrEmpty(vornameTextBox.Text) || exp is null)
+            if (string.IsNullOrEmpty(firstNameTextBox.Text) || string.IsNullOrEmpty(firstNameTextBox.Text) || exp is null)
             {
-                MessageBox.Show("Your data is invalid. The entry will not be saved.", "Invalid data");
+                MessageBox.Show($"{Strings.YourDataIsInvalid_period} {Strings.TheEntryWillNotBeSaved_period}", Strings.InvalidData);
                 return;
             }
 
-            if (_participants.Any(p => p.FirstName == vornameTextBox.Text && p.LastName == nachnameTextBox.Text))
+            if (StaticProperties.Participants.Any(p => p.FirstName == firstNameTextBox.Text && p.LastName == lastNameTextBox.Text))
             {
-                MessageBox.Show("A participant with this name already exists. The entry will not be saved.", "Already exists");
+                MessageBox.Show($"{Strings.AParticipantWithThisNameAlreadyExists_period} {Strings.TheEntryWillNotBeSaved_period}", Strings.TheEntryAlreadyExists);
                 return;
             }
 
-            _participants.Add(new Participant(
-                vornameTextBox.Text, nachnameTextBox.Text,
-                schulnameComboBox.SelectedItem.ToString(), schulstartDateTimePicker.Value,
-                (Enums.Experience)exp, programmiersprachenCheckedListBox.CheckedItems.Cast<string>().ToList()));
-            XmlHelper.SerializeXml(_participants, XmlPath);
+            StaticProperties.Participants.Add(new Participant(
+                firstNameTextBox.Text, lastNameTextBox.Text,
+                schoolComboBox.SelectedItem.ToString(), schoolstartDateTimePicker.Value,
+                (Enums.Experience)exp, programmingLanguagesCheckedListBox.CheckedItems.Cast<string>().ToList()));
+            XmlHelper.SerializeXml(StaticProperties.Participants, StaticProperties.ParticipantsPath);
             FillParticipantListBox();
         }
 
         private void FillParticipantListBox()
         {
             allParticipantsListBox.Items.Clear();
-            allParticipantsListBox.Items.AddRange(_participants.ToArray());
+            allParticipantsListBox.Items.AddRange(StaticProperties.Participants.ToArray());
         }
 
         private void zuruecksetzenButton_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes != MessageBox.Show("Möchten Sie wirklich alle eingegebenen Daten leeren?", "U sure about that?", MessageBoxButtons.YesNo)) return;
+            if (DialogResult.Yes != MessageBox.Show(Strings.DoYouWantToDeleteAllData_question, Strings.USureAboutThat_question, MessageBoxButtons.YesNo)) return;
             ResetVisualizaiton();
         }
 
         private void deleteSelectedParticipants_Click(object sender, EventArgs e)
         {
             if (allParticipantsListBox.SelectedItems.Count <= 0) return;
-            if (DialogResult.Yes == MessageBox.Show($"Möchten Sie wirklich die folgenden Teilnehmer*innen löschen?\n{string.Join(", ", allParticipantsListBox.SelectedItems.Cast<object>().Select(p => p.ToString()))}", "Teilnehmer*innen löschen", MessageBoxButtons.YesNo))
+            if (DialogResult.Yes == MessageBox.Show($"{Strings.DoYouReallyWantToDeleteTheFollowingParticipants_question}" +
+                                                    $"\n{string.Join(", ", allParticipantsListBox.SelectedItems.Cast<object>().Select(p => p.ToString()))}",
+                                                    Strings.DeleteParticipants, MessageBoxButtons.YesNo))
             {
                 foreach (var item in allParticipantsListBox.SelectedItems)
                 {
-                    _participants.Remove(_participants.First(p => p.ToString() == item.ToString()));
+                    StaticProperties.Participants.Remove(StaticProperties.Participants.First(p => p.ToString() == item.ToString()));
                 }
-                XmlHelper.SerializeXml(_participants, XmlPath);
+                XmlHelper.SerializeXml(StaticProperties.Participants, StaticProperties.ParticipantsPath);
                 FillParticipantListBox();
             }
         }
 
-        private void fontsToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void SetFont(Font font)
         {
-            if (fontsToolStripComboBox.SelectedIndex < 0) return;
-            SetFont(this, FontFamily.Families[fontsToolStripComboBox.SelectedIndex]);
+            SetFont(this, StaticProperties.Config.Font = font);
         }
 
-        private void SetFont(Control control, FontFamily fontFamily)
+        private void SetFont(Control control, Font font)
         {
-            control.Font = new Font(fontFamily, control.Font.Size, control.Font.Style);
-            foreach (var c in control.Controls.Cast<Control>()) SetFont(c, fontFamily);
+            control.Font = font;
+            foreach (var c in control.Controls.Cast<Control>()) SetFont(c, font);
+        }
+
+        private void SetBackColor(Color color)
+        {
+            SetBackColor(this, StaticProperties.Config.BackColor = color);
+        }
+
+        private void SetBackColor(Control control, Color color)
+        {
+            control.BackColor = color;
+            foreach (var c in control.Controls.Cast<Control>().Where(c => c is Form
+            || c is GroupBox || c is ListBox || c is ToolStrip)) SetBackColor(c, color);
+        }
+
+        private void SetForeColor(Color color)
+        {
+            SetForeColor(this, StaticProperties.Config.ForeColor = color);
+        }
+
+        private void SetForeColor(Control control, Color color)
+        {
+            control.ForeColor = color;
+            if (control is DateTimePicker dtp)  dtp.CalendarForeColor = dtp.CalendarTitleForeColor = dtp.CalendarTrailingForeColor = color;
+            foreach (var c in control.Controls.Cast<Control>()) SetForeColor(c, color);
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void schriftartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var fd = new FontDialog { Font = Font };
+            if (fd.ShowDialog() == DialogResult.OK) SetFont(fd.Font);
+        }
+
+        private void exportierenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var sfd = new SaveFileDialog();
+            sfd.FileName = StaticProperties.ParticipantsFilename;
+            sfd.Filter = "Xml File|*.xml";
+            sfd.Title = "Save Participants";
+            sfd.CheckPathExists = true;
+            if (sfd.ShowDialog() != DialogResult.OK
+                || string.IsNullOrWhiteSpace(sfd.FileName)) return;
+            XmlHelper.SerializeXml(StaticProperties.Participants, (FileStream)sfd.OpenFile());
+        }
+
+        private void hintergrundfarbeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var cd = new ColorDialog { Color = BackColor };
+            if (cd.ShowDialog() == DialogResult.OK) SetBackColor(cd.Color);
+        }
+
+        private void schriftfarbeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var cd = new ColorDialog { Color = ForeColor };
+            if (cd.ShowDialog() == DialogResult.OK) SetForeColor(cd.Color);
+        }
+
+        private void enterBommertModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Credits go to Jakob Bommert
+            SetForeColor(Color.FromArgb(255, 214, 128));
+            SetBackColor(Color.Yellow);
+            SetFont(new Font(FontFamily.Families.First(f => f.Name.Contains("Comic Sans")), 10, FontStyle.Italic));
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            XmlHelper.SerializeXml(StaticProperties.Config, StaticProperties.ConfigPath);
+        }
+
+        private void zuDefaultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetForeColor(StaticProperties.DefaultForeColor);
+            SetBackColor(StaticProperties.DefaultBackColor);
+            SetFont(StaticProperties.DefaultFont);
         }
     }
 }

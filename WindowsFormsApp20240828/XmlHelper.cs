@@ -35,8 +35,21 @@ namespace WindowsFormsApp20240828
             {
                 using (var fileStream = new FileStream(filepath, FileMode.Create))
                 {
-                    new XmlSerializer(typeof(T), extraTypes).Serialize(XmlWriter.Create(fileStream, new XmlWriterSettings { Indent = true }), item);
+                    SerializeXml(item, fileStream, extraTypes);
                 }
+                return true;
+            }
+            catch (IOException)
+            {
+                return false;
+            }
+        }
+
+        public static bool SerializeXml<T>(T item, FileStream fileStream, Type[] extraTypes = null)
+        {
+            try
+            {
+                new XmlSerializer(typeof(T), extraTypes).Serialize(XmlWriter.Create(fileStream, new XmlWriterSettings { Indent = true }), item);
                 return true;
             }
             catch (IOException)
