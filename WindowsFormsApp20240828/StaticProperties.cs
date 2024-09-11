@@ -48,15 +48,11 @@ namespace WindowsFormsApp20240828
                 "C#"
         };
 
-        public static List<Participant> Participants { get; } = new List<Participant>();
-
         public static string ParticipantsFilename => "Participants.xml";
 
         public static string ConfigFilename => "Configuration.xml";
 
         public static string AppdataDirectory => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Fumo_69_420");
-
-        public static string ParticipantsPath => Path.Combine(AppdataDirectory, ParticipantsFilename);
 
         public static string ConfigPath => Path.Combine(AppdataDirectory, ConfigFilename);
     }

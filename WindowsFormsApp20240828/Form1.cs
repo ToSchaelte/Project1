@@ -1,15 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using WindowsFormsApp20240828.Repositories;
 
 namespace WindowsFormsApp20240828
 {
     public partial class MainForm : Form
     {
+        private readonly DbHandler _dbHandler = new DbHandler();
+
+        private bool _appClosing;
+
+        private ParticipantRepository ParticipantRepository => _dbHandler.Repositories.ParticipantRepository;
+
         public MainForm()
         {
             InitializeComponent();
@@ -21,11 +27,18 @@ namespace WindowsFormsApp20240828
 
         private void OnLoad(object sender, EventArgs e)
         {
-            StaticProperties.Participants.Clear();
-            if (File.Exists(StaticProperties.ParticipantsPath)) StaticProperties.Participants.AddRange((List<Participant>)XmlHelper.DeserializeXml<List<Participant>>(StaticProperties.ParticipantsPath));
+            if (!_dbHandler.OpenSQLiteConnection())
+            {
+                MessageBox.Show(Strings.TheDatabaseFileCouldNotBeOpened, Strings.DatabaseError,
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.Exit();
+                return;
+            }
+
             if (File.Exists(StaticProperties.ConfigPath)) StaticProperties.Config = (Configuration)XmlHelper.DeserializeXml<Configuration>(StaticProperties.ConfigPath);
 
             ResetVisualizaiton();
+            DetailViewDialog.Instance.FormClosing += DetailViewDialog_FormClosing;
         }
 
         private void FillSchoolComboBox()
@@ -84,24 +97,24 @@ namespace WindowsFormsApp20240828
                 return;
             }
 
-            if (StaticProperties.Participants.Any(p => p.FirstName == firstNameTextBox.Text && p.LastName == lastNameTextBox.Text))
+            if (ParticipantRepository.Participants.Any(p => p.FirstName == firstNameTextBox.Text && p.LastName == lastNameTextBox.Text))
             {
                 MessageBox.Show($"{Strings.AParticipantWithThisNameAlreadyExists_period} {Strings.TheEntryWillNotBeSaved_period}", Strings.TheEntryAlreadyExists);
                 return;
             }
 
-            StaticProperties.Participants.Add(new Participant(
+            ParticipantRepository.Participants.Add(new Participant(
                 firstNameTextBox.Text, lastNameTextBox.Text,
                 schoolComboBox.SelectedItem.ToString(), schoolstartDateTimePicker.Value,
                 (Enums.Experience)exp, programmingLanguagesCheckedListBox.CheckedItems.Cast<string>().ToList()));
-            XmlHelper.SerializeXml(StaticProperties.Participants, StaticProperties.ParticipantsPath);
+            ParticipantRepository.Update();
             FillParticipantListBox();
         }
 
         private void FillParticipantListBox()
         {
             allParticipantsListBox.Items.Clear();
-            allParticipantsListBox.Items.AddRange(StaticProperties.Participants.ToArray());
+            allParticipantsListBox.Items.AddRange(ParticipantRepository.Participants.ToArray());
         }
 
         private void zuruecksetzenButton_Click(object sender, EventArgs e)
@@ -119,9 +132,9 @@ namespace WindowsFormsApp20240828
             {
                 foreach (var item in allParticipantsListBox.SelectedItems)
                 {
-                    StaticProperties.Participants.Remove(StaticProperties.Participants.First(p => p.ToString() == item.ToString()));
+                    ParticipantRepository.Participants.Remove(ParticipantRepository.Participants.First(p => p.ToString() == item.ToString()));
                 }
-                XmlHelper.SerializeXml(StaticProperties.Participants, StaticProperties.ParticipantsPath);
+                ParticipantRepository.Update();
                 FillParticipantListBox();
             }
         }
@@ -129,6 +142,7 @@ namespace WindowsFormsApp20240828
         private void SetFont(Font font)
         {
             SetFont(this, StaticProperties.Config.Font = font);
+            SetFont(DetailViewDialog.Instance, StaticProperties.Config.Font);
         }
 
         private void SetFont(Control control, Font font)
@@ -140,6 +154,7 @@ namespace WindowsFormsApp20240828
         private void SetBackColor(Color color)
         {
             SetBackColor(this, StaticProperties.Config.BackColor = color);
+            SetBackColor(DetailViewDialog.Instance, StaticProperties.Config.BackColor);
         }
 
         private void SetBackColor(Control control, Color color)
@@ -152,6 +167,7 @@ namespace WindowsFormsApp20240828
         private void SetForeColor(Color color)
         {
             SetForeColor(this, StaticProperties.Config.ForeColor = color);
+            SetForeColor(DetailViewDialog.Instance, StaticProperties.Config.ForeColor);
         }
 
         private void SetForeColor(Control control, Color color)
@@ -181,7 +197,7 @@ namespace WindowsFormsApp20240828
             sfd.CheckPathExists = true;
             if (sfd.ShowDialog() != DialogResult.OK
                 || string.IsNullOrWhiteSpace(sfd.FileName)) return;
-            XmlHelper.SerializeXml(StaticProperties.Participants, (FileStream)sfd.OpenFile());
+            XmlHelper.SerializeXml(ParticipantRepository.Participants.ToList(), (FileStream)sfd.OpenFile());
         }
 
         private void hintergrundfarbeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -207,6 +223,9 @@ namespace WindowsFormsApp20240828
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             XmlHelper.SerializeXml(StaticProperties.Config, StaticProperties.ConfigPath);
+            _appClosing = true;
+            DetailViewDialog.Instance.Close();
+            Application.Exit();
         }
 
         private void zuDefaultToolStripMenuItem_Click(object sender, EventArgs e)
@@ -214,6 +233,22 @@ namespace WindowsFormsApp20240828
             SetForeColor(StaticProperties.DefaultForeColor);
             SetBackColor(StaticProperties.DefaultBackColor);
             SetFont(StaticProperties.DefaultFont);
+        }
+
+        private void detailsButton_Click(object sender, EventArgs e)
+        {
+            if (DetailViewDialog.Instance.Visible)
+            {
+                DetailViewDialog.Instance.Focus();
+                return;
+            }
+            DetailViewDialog.Instance.ParticipantRepository = ParticipantRepository;
+            DetailViewDialog.Instance.Show();
+        }
+
+        private void DetailViewDialog_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = !_appClosing;
         }
     }
 }

@@ -58,6 +58,7 @@
             this.foreColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activateBommertModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetToDefaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detailsButton = new System.Windows.Forms.Button();
             this.experienceGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schoolPictureBox)).BeginInit();
             this.mainMenuStrip.SuspendLayout();
@@ -255,10 +256,18 @@
             resources.ApplyResources(this.resetToDefaultToolStripMenuItem, "resetToDefaultToolStripMenuItem");
             this.resetToDefaultToolStripMenuItem.Click += new System.EventHandler(this.zuDefaultToolStripMenuItem_Click);
             // 
+            // detailsButton
+            // 
+            resources.ApplyResources(this.detailsButton, "detailsButton");
+            this.detailsButton.Name = "detailsButton";
+            this.detailsButton.UseVisualStyleBackColor = true;
+            this.detailsButton.Click += new System.EventHandler(this.detailsButton_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.detailsButton);
             this.Controls.Add(this.deleteSelectedParticipants);
             this.Controls.Add(this.allParticipantsListBox);
             this.Controls.Add(this.schoolPictureBox);
@@ -322,6 +331,7 @@
         private System.Windows.Forms.ToolStripMenuItem foreColorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem activateBommertModeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetToDefaultToolStripMenuItem;
+        private System.Windows.Forms.Button detailsButton;
     }
 }
 

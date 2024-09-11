@@ -10,6 +10,7 @@ namespace WindowsFormsApp20240828
     {
         public enum Experience
         {
+            None,
             LessThanOne,
             OneToFour,
             FiveToNine,

@@ -151,7 +151,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;firstNameLabel.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="lastNameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -184,7 +184,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lastNameLabel.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="firstNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>123, 30</value>
@@ -208,7 +208,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;firstNameTextBox.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="schoolLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -241,7 +241,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;schoolLabel.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="schoolComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>123, 54</value>
@@ -265,7 +265,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;schoolComboBox.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="lastNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>366, 30</value>
@@ -289,7 +289,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lastNameTextBox.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="schoolstartLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -322,79 +322,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;schoolstartLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;moreThanTenYearsRadioButton.Name" xml:space="preserve">
-    <value>moreThanTenYearsRadioButton</value>
-  </data>
-  <data name="&gt;&gt;moreThanTenYearsRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;moreThanTenYearsRadioButton.Parent" xml:space="preserve">
-    <value>experienceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;moreThanTenYearsRadioButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;fiveToNineYearsRadioButton.Name" xml:space="preserve">
-    <value>fiveToNineYearsRadioButton</value>
-  </data>
-  <data name="&gt;&gt;fiveToNineYearsRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fiveToNineYearsRadioButton.Parent" xml:space="preserve">
-    <value>experienceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;fiveToNineYearsRadioButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;oneToFourYearsRadioButton.Name" xml:space="preserve">
-    <value>oneToFourYearsRadioButton</value>
-  </data>
-  <data name="&gt;&gt;oneToFourYearsRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;oneToFourYearsRadioButton.Parent" xml:space="preserve">
-    <value>experienceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;oneToFourYearsRadioButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lessThanOneYearRadioButton.Name" xml:space="preserve">
-    <value>lessThanOneYearRadioButton</value>
-  </data>
-  <data name="&gt;&gt;lessThanOneYearRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lessThanOneYearRadioButton.Parent" xml:space="preserve">
-    <value>experienceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;lessThanOneYearRadioButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="experienceGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 122</value>
-  </data>
-  <data name="experienceGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 139</value>
-  </data>
-  <data name="experienceGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="experienceGroupBox.Text" xml:space="preserve">
-    <value>Experience</value>
-  </data>
-  <data name="&gt;&gt;experienceGroupBox.Name" xml:space="preserve">
-    <value>experienceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;experienceGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;experienceGroupBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;experienceGroupBox.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="moreThanTenYearsRadioButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -516,6 +444,30 @@
   <data name="&gt;&gt;lessThanOneYearRadioButton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="experienceGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 122</value>
+  </data>
+  <data name="experienceGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 139</value>
+  </data>
+  <data name="experienceGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="experienceGroupBox.Text" xml:space="preserve">
+    <value>Experience</value>
+  </data>
+  <data name="&gt;&gt;experienceGroupBox.Name" xml:space="preserve">
+    <value>experienceGroupBox</value>
+  </data>
+  <data name="&gt;&gt;experienceGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;experienceGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;experienceGroupBox.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <data name="programmingLanguagesCheckedListBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>193, 122</value>
   </data>
@@ -535,7 +487,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;programmingLanguagesCheckedListBox.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="resetButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -550,7 +502,7 @@
     <value>94, 23</value>
   </data>
   <data name="resetButton.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="resetButton.Text" xml:space="preserve">
     <value>Reset</value>
@@ -565,7 +517,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;resetButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="addButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -580,7 +532,7 @@
     <value>94, 23</value>
   </data>
   <data name="addButton.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="addButton.Text" xml:space="preserve">
     <value>Add</value>
@@ -595,7 +547,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;addButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="schoolstartDateTimePicker.Location" type="System.Drawing.Point, System.Drawing">
     <value>123, 80</value>
@@ -616,7 +568,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;schoolstartDateTimePicker.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="schoolPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -643,7 +595,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;schoolPictureBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="allParticipantsListBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>483, 122</value>
@@ -664,19 +616,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;allParticipantsListBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="deleteSelectedParticipants.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="deleteSelectedParticipants.Location" type="System.Drawing.Point, System.Drawing">
-    <value>483, 238</value>
+    <value>552, 238</value>
   </data>
   <data name="deleteSelectedParticipants.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 23</value>
+    <value>65, 23</value>
   </data>
   <data name="deleteSelectedParticipants.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="deleteSelectedParticipants.Text" xml:space="preserve">
     <value>Delete</value>
@@ -691,7 +643,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;deleteSelectedParticipants.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="mainMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -700,7 +652,7 @@
     <value>Ctrl+E</value>
   </data>
   <data name="exportToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>148, 22</value>
   </data>
   <data name="exportToolStripMenuItem.Text" xml:space="preserve">
     <value>Export</value>
@@ -709,7 +661,7 @@
     <value>Alt+F4</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>148, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
@@ -736,7 +688,7 @@
     <value>Alt+C</value>
   </data>
   <data name="backgroundColorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>268, 22</value>
+    <value>264, 22</value>
   </data>
   <data name="backgroundColorToolStripMenuItem.Text" xml:space="preserve">
     <value>Background color...</value>
@@ -745,7 +697,7 @@
     <value>Alt+Shift+C</value>
   </data>
   <data name="foreColorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>268, 22</value>
+    <value>264, 22</value>
   </data>
   <data name="foreColorToolStripMenuItem.Text" xml:space="preserve">
     <value>Foreground color...</value>
@@ -799,7 +751,34 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;mainMenuStrip.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
+  </data>
+  <data name="detailsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="detailsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>483, 238</value>
+  </data>
+  <data name="detailsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 23</value>
+  </data>
+  <data name="detailsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="detailsButton.Text" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="&gt;&gt;detailsButton.Name" xml:space="preserve">
+    <value>detailsButton</value>
+  </data>
+  <data name="&gt;&gt;detailsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;detailsButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;detailsButton.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
