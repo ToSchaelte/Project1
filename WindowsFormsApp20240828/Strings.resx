@@ -150,4 +150,13 @@
   <data name="TheDatabaseFileCouldNotBeOpened" xml:space="preserve">
     <value>The database file could not be opened</value>
   </data>
+  <data name="0ParticipantsAreRegistered" xml:space="preserve">
+    <value>{0} participants are registered</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
 </root>

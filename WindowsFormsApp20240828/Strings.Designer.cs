@@ -61,6 +61,24 @@ namespace WindowsFormsApp20240828 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} participants are registered.
+        /// </summary>
+        internal static string _0ParticipantsAreRegistered {
+            get {
+                return ResourceManager.GetString("0ParticipantsAreRegistered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        internal static string Add {
+            get {
+                return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A participant with this name already exists..
         /// </summary>
         internal static string AParticipantWithThisNameAlreadyExists_period {
@@ -138,6 +156,15 @@ namespace WindowsFormsApp20240828 {
         internal static string TheEntryWillNotBeSaved_period {
             get {
                 return ResourceManager.GetString("TheEntryWillNotBeSaved_period", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update.
+        /// </summary>
+        internal static string Update {
+            get {
+                return ResourceManager.GetString("Update", resourceCulture);
             }
         }
         

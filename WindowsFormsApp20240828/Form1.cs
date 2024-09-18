@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -15,6 +17,8 @@ namespace WindowsFormsApp20240828
         private bool _appClosing;
 
         private ParticipantRepository ParticipantRepository => _dbHandler.Repositories.ParticipantRepository;
+
+        private Participant _currentParticipant = Participant.Empty;
 
         public MainForm()
         {
@@ -58,16 +62,29 @@ namespace WindowsFormsApp20240828
         {
             SetColors();
             SetFont(this, StaticProperties.Config.Font);
+            _currentParticipant = Participant.Empty;
+            FillVisualization();
+        }
+
+        private void FillVisualization()
+        {
+            addButton.Text = _currentParticipant?.Id >= 0 ? Strings.Update : Strings.Add;
             FillSchoolComboBox();
+            schoolComboBox.SelectedItem = _currentParticipant?.School ?? schoolComboBox.Items.OfType<string>().FirstOrDefault();
             FillProgrammingLanguagesCheckedListBox();
-            FillParticipantListBox();
-            firstNameTextBox.Text = string.Empty;
-            lastNameTextBox.Text = string.Empty;
-            schoolstartDateTimePicker.Value = DateTime.Now;
-            foreach (var item in experienceGroupBox.Controls.Cast<Control>().Where(c => c is RadioButton).Cast<RadioButton>())
+            foreach (var item in _currentParticipant?.ProgrammingLanguages ?? new ObservableCollection<string>())
             {
-                item.Checked = false;
+                programmingLanguagesCheckedListBox.SetItemChecked(
+                    programmingLanguagesCheckedListBox.Items.IndexOf(item),
+                    true);
             }
+            firstNameTextBox.Text = _currentParticipant?.FirstName ?? string.Empty;
+            lastNameTextBox.Text = _currentParticipant?.LastName ?? string.Empty;
+            schoolstartDateTimePicker.Value = _currentParticipant?.SchoolEntry ?? DateTime.Now;
+            var radioButtons = experienceGroupBox.Controls.OfType<RadioButton>().ToList();
+            foreach (var item in radioButtons) item.Checked = false;
+            if (_currentParticipant?.Experience > 0) radioButtons[((int)_currentParticipant.Experience) - 1].Checked = true;
+            FillParticipantListBox();
         }
 
         private void SetColors()
@@ -78,6 +95,7 @@ namespace WindowsFormsApp20240828
 
         private void schoolComboBox_OnSelectedIndexChanged(object sender, EventArgs e)
         {
+            _currentParticipant.School = schoolComboBox.SelectedItem.ToString();
             var image = StaticProperties.Schools.FirstOrDefault(s => s.Key == schoolComboBox.SelectedItem.ToString()).Value;
             if (image is null) return;
             schoolPictureBox.Image = image;
@@ -97,18 +115,21 @@ namespace WindowsFormsApp20240828
                 return;
             }
 
-            if (ParticipantRepository.Participants.Any(p => p.FirstName == firstNameTextBox.Text && p.LastName == lastNameTextBox.Text))
+            var existing = ParticipantRepository.Participants.FirstOrDefault(p => p.Id == _currentParticipant.Id);
+            if (existing is null)
             {
-                MessageBox.Show($"{Strings.AParticipantWithThisNameAlreadyExists_period} {Strings.TheEntryWillNotBeSaved_period}", Strings.TheEntryAlreadyExists);
-                return;
+                ParticipantRepository.Participants.Add(_currentParticipant);
+            }
+            else
+            {
+                existing.School = _currentParticipant.School;
+                existing.SchoolEntry = _currentParticipant.SchoolEntry;
+                existing.Experience = _currentParticipant.Experience;
+                existing.ProgrammingLanguages = _currentParticipant.ProgrammingLanguages;
             }
 
-            ParticipantRepository.Participants.Add(new Participant(
-                firstNameTextBox.Text, lastNameTextBox.Text,
-                schoolComboBox.SelectedItem.ToString(), schoolstartDateTimePicker.Value,
-                (Enums.Experience)exp, programmingLanguagesCheckedListBox.CheckedItems.Cast<string>().ToList()));
+            ResetVisualizaiton();
             ParticipantRepository.Update();
-            FillParticipantListBox();
         }
 
         private void FillParticipantListBox()
@@ -249,6 +270,54 @@ namespace WindowsFormsApp20240828
         private void DetailViewDialog_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = !_appClosing;
+        }
+
+        private void allParticipantsListBox_DoubleClick(object sender, EventArgs e)
+        {
+            var item = allParticipantsListBox.SelectedItems.OfType<Participant>().LastOrDefault();
+            if (item is null) return;
+            _currentParticipant = item;
+            FillVisualization();
+        }
+
+        private void firstNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _currentParticipant.FirstName = firstNameTextBox.Text;
+        }
+
+        private void lastNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _currentParticipant.LastName = lastNameTextBox.Text;
+        }
+
+        private void schoolstartDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            _currentParticipant.SchoolEntry = schoolstartDateTimePicker.Value;
+        }
+
+        private void lessThanOneYearRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            _currentParticipant.Experience = Enums.Experience.LessThanOne;
+        }
+
+        private void oneToFourYearsRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            _currentParticipant.Experience = Enums.Experience.OneToFour;
+        }
+
+        private void fiveToNineYearsRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            _currentParticipant.Experience = Enums.Experience.FiveToNine;
+        }
+
+        private void moreThanTenYearsRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            _currentParticipant.Experience = Enums.Experience.MoreThanTen;
+        }
+
+        private void programmingLanguagesCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _currentParticipant.ProgrammingLanguages = new ObservableCollection<string>(programmingLanguagesCheckedListBox.CheckedItems.Cast<string>());
         }
     }
 }

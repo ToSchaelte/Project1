@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Data;
+using System.Data.Common;
+using System.Data.OleDb;
+using System.Data.SQLite;
 using System.Linq;
 
 namespace WindowsFormsApp20240828.Repositories
 {
     public class ParticipantRepository
     {
+        private readonly List<Participant> _changedItems = new List<Participant>();
         private readonly List<Participant> _addedItems = new List<Participant>();
         private readonly List<Participant> _removedItems = new List<Participant>();
 
@@ -48,6 +52,7 @@ namespace WindowsFormsApp20240828.Repositories
                 {
                     var temp = Participant.FromReader(reader);
                     if (temp is null) continue;
+                    temp.PropertyChanged += Item_PropertyChanged;
                     Participants.Add(temp);
                 }
                 reader.Close();
@@ -62,20 +67,35 @@ namespace WindowsFormsApp20240828.Repositories
             switch (e.Action)
             {
                 case NotifyCollectionChangedAction.Add:
+                    foreach (var item in e.NewItems.Cast<Participant>())
+                        item.PropertyChanged += Item_PropertyChanged;
                     _addedItems.AddRange(e.NewItems.Cast<Participant>());
                     break;
                 case NotifyCollectionChangedAction.Replace:
+                    foreach (var item in e.NewItems.Cast<Participant>())
+                        item.PropertyChanged += Item_PropertyChanged;
+                    foreach (var item in e.OldItems.Cast<Participant>())
+                        item.PropertyChanged -= Item_PropertyChanged;
                     _removedItems.AddRange(e.OldItems.Cast<Participant>());
                     _addedItems.AddRange(e.NewItems.Cast<Participant>());
                     break;
                 case NotifyCollectionChangedAction.Reset:
                 case NotifyCollectionChangedAction.Remove:
+                    foreach (var item in e.OldItems.Cast<Participant>())
+                        item.PropertyChanged -= Item_PropertyChanged;
                     _removedItems.AddRange(e.OldItems.Cast<Participant>());
                     break;
                 case NotifyCollectionChangedAction.Move:
                     break;
 
             }
+        }
+
+        private void Item_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            var participant = sender as Participant;
+            if (participant is null || _changedItems.Contains(participant)) return;
+            _changedItems.Add(participant);
         }
 
         private void ClearTable()
@@ -128,12 +148,63 @@ namespace WindowsFormsApp20240828.Repositories
             }
         }
 
+        private void OnItemsChanged(IEnumerable<Participant> changedItems)
+        {
+            foreach (var item in changedItems)
+            {
+                try
+                {
+                    var dataCommand = _dbConnection.CreateCommand();
+                    
+                    if (DbConnection is SQLiteConnection)
+                    {
+                        dataCommand.Parameters.Add(new SQLiteParameter("@ID", item.Id));
+                        dataCommand.Parameters.Add(new SQLiteParameter("@Name", item.LastName));
+                        dataCommand.Parameters.Add(new SQLiteParameter("@Vorname", item.FirstName));
+                        dataCommand.Parameters.Add(new SQLiteParameter("@Schule", item.School));
+                        dataCommand.Parameters.Add(new SQLiteParameter("@SchuleSeit", item.SchoolEntry));
+                        dataCommand.Parameters.Add(new SQLiteParameter("@Erfahrung", (int)item.Experience));
+                        foreach (var language in StaticProperties.ProgrammingLanguages)
+                        {
+                            dataCommand.Parameters.Add(
+                                new SQLiteParameter($"@{language.Replace("++", "plus").Replace("#", "Sharp")}",
+                                item.ProgrammingLanguages.Contains(language)));
+                        }
+                    }
+                    else if (DbConnection is OleDbConnection)
+                    {
+                        dataCommand.Parameters.Add(new OleDbParameter("@ID", item.Id));
+                        dataCommand.Parameters.Add(new OleDbParameter("@Name", item.LastName));
+                        dataCommand.Parameters.Add(new OleDbParameter("@Vorname", item.FirstName));
+                        dataCommand.Parameters.Add(new OleDbParameter("@Schule", item.School));
+                        dataCommand.Parameters.Add(new OleDbParameter("@SchuleSeit", item.SchoolEntry));
+                        dataCommand.Parameters.Add(new OleDbParameter("@Erfahrung", (int)item.Experience));
+                        foreach (var language in StaticProperties.ProgrammingLanguages)
+                        {
+                            dataCommand.Parameters.Add(
+                                new OleDbParameter($"@{language.Replace("++", "plus").Replace("#", "Sharp")}",
+                                item.ProgrammingLanguages.Contains(language)));
+                        }
+                    }
+                    
+                    dataCommand.Connection = _dbConnection;
+                    dataCommand.CommandText = $"UPDATE Teilnehmer SET " +
+                        $"{string.Join(", ", dataCommand.Parameters.OfType<DbParameter>().Select(p => $"{p.ParameterName.Replace("@", "")} = {p.ParameterName}"))} " +
+                        $"WHERE ID={item.Id};";
+                    dataCommand.ExecuteNonQuery();
+                }
+                catch { }
+            }
+        }
+
         public void Update()
         {
             OnItemsRemoved(_removedItems);
             OnItemsAdded(_addedItems);
+            OnItemsChanged(_changedItems);
             _removedItems.Clear();
             _addedItems.Clear();
+            _changedItems.Clear();
         }
     }
 }

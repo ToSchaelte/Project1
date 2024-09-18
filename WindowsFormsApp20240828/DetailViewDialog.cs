@@ -36,6 +36,7 @@ namespace WindowsFormsApp20240828
 
         private void FillDataTable()
         {
+            CountLabel.Text = string.Format(Strings._0ParticipantsAreRegistered, ParticipantRepository.Participants.Count);
             detailsDataGridView.Rows.Clear();
 
             foreach (var item in ParticipantRepository.Participants)

@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="0ParticipantsAreRegistered" xml:space="preserve">
+    <value>Es sind {0} Teilnahmer*innen angemeldet</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
   <data name="AParticipantWithThisNameAlreadyExists_period" xml:space="preserve">
     <value>Ein*e Teilnehmer*in mit diesem Namen existiert bereits.</value>
   </data>
@@ -143,6 +149,9 @@
   </data>
   <data name="TheEntryWillNotBeSaved_period" xml:space="preserve">
     <value>Der Eintrag wird nicht gespeichert.</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Aktualisieren</value>
   </data>
   <data name="USureAboutThat_question" xml:space="preserve">
     <value>Sicher?</value>

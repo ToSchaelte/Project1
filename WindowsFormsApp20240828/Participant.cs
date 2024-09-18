@@ -1,33 +1,89 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Data;
+using System.Runtime.CompilerServices;
 using System.Xml.Serialization;
+using WindowsFormsApp20240828.Helpers;
 
 namespace WindowsFormsApp20240828
 {
-    public class Participant
+    public class Participant : INotifyPropertyChanged
     {
-        [XmlAttribute]
-        public int Id { get; set; } = 0;
 
-        [XmlAttribute]
-        public string FirstName { get; set; } = string.Empty;
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        [XmlAttribute]
-        public string LastName { get; set; } = string.Empty;
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
+        private int _id = -1;
         [XmlAttribute]
-        public string School { get; set; } = string.Empty;
+        public int Id
+        {
+            get => _id;
+            set => PropertyHelper.SetAndNotify(ref _id,
+                value, nameof(Id), OnPropertyChanged);
+        }
 
+        private string _firstName = string.Empty;
+        [XmlAttribute]
+        public string FirstName
+        {
+            get => _firstName;
+            set => PropertyHelper.SetAndNotify(ref _firstName,
+                value, nameof(FirstName), OnPropertyChanged);
+        }
+
+        private string _lastName = string.Empty;
+        [XmlAttribute]
+        public string LastName
+        {
+            get => _lastName;
+            set => PropertyHelper.SetAndNotify(ref _lastName,
+                value, nameof(LastName), OnPropertyChanged);
+        }
+
+        private string _school = string.Empty;
+        [XmlAttribute]
+        public string School
+        {
+            get => _school;
+            set => PropertyHelper.SetAndNotify(ref _school,
+                value, nameof(School), OnPropertyChanged);
+        }
+
+        private DateTime _schoolEntry = DateTime.UtcNow;
         [XmlAttribute("DateOfSchoolEntry")]
-        public DateTime SchoolEntry { get; set; } = DateTime.Now;
+        public DateTime SchoolEntry
+        {
+            get => _schoolEntry;
+            set => PropertyHelper.SetAndNotify(ref _schoolEntry,
+                value, nameof(SchoolEntry), OnPropertyChanged);
+        }
 
+        private Enums.Experience _experience = 0;
         [XmlAttribute("ExperienceInYears")]
-        public Enums.Experience Experience { get; set; }
+        public Enums.Experience Experience
+        {
+            get => _experience;
+            set => PropertyHelper.SetAndNotify(ref _experience,
+                value, nameof(Experience), OnPropertyChanged);
+        }
 
+        private ObservableCollection<string> _programmingLanguages = new ObservableCollection<string>();
         [XmlArray("ProgrammingLanguages")]
         [XmlArrayItem("Language")]
-        public List<string> ProgrammingLanguages { get; set; } = new List<string>();
+        public ObservableCollection<string> ProgrammingLanguages
+        {
+            get => _programmingLanguages;
+            set => PropertyHelper.SetAndNotify(ref _programmingLanguages,
+                value, nameof(ProgrammingLanguages), OnPropertyChanged);
+        }
+
+        public static Participant Empty => new Participant();
 
         public Participant()
         { }
@@ -39,7 +95,11 @@ namespace WindowsFormsApp20240828
             School = school;
             SchoolEntry = schoolEntry;
             Experience = experience;
-            ProgrammingLanguages = programmingLanguages;
+            ProgrammingLanguages = new ObservableCollection<string>(programmingLanguages);
+            ProgrammingLanguages.CollectionChanged += (sender, e) =>
+            {
+                PropertyHelper.SetAndNotify(ref _programmingLanguages, ProgrammingLanguages, nameof(ProgrammingLanguages), OnPropertyChanged);
+            };
         }
 
         public static Participant FromReader(IDataReader reader)

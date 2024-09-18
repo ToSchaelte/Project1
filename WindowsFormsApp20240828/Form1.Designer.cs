@@ -78,6 +78,7 @@
             // 
             resources.ApplyResources(this.firstNameTextBox, "firstNameTextBox");
             this.firstNameTextBox.Name = "firstNameTextBox";
+            this.firstNameTextBox.TextChanged += new System.EventHandler(this.firstNameTextBox_TextChanged);
             // 
             // schoolLabel
             // 
@@ -96,6 +97,7 @@
             // 
             resources.ApplyResources(this.lastNameTextBox, "lastNameTextBox");
             this.lastNameTextBox.Name = "lastNameTextBox";
+            this.lastNameTextBox.TextChanged += new System.EventHandler(this.lastNameTextBox_TextChanged);
             // 
             // schoolstartLabel
             // 
@@ -118,6 +120,7 @@
             this.moreThanTenYearsRadioButton.Name = "moreThanTenYearsRadioButton";
             this.moreThanTenYearsRadioButton.TabStop = true;
             this.moreThanTenYearsRadioButton.UseVisualStyleBackColor = true;
+            this.moreThanTenYearsRadioButton.CheckedChanged += new System.EventHandler(this.moreThanTenYearsRadioButton_CheckedChanged);
             // 
             // fiveToNineYearsRadioButton
             // 
@@ -125,6 +128,7 @@
             this.fiveToNineYearsRadioButton.Name = "fiveToNineYearsRadioButton";
             this.fiveToNineYearsRadioButton.TabStop = true;
             this.fiveToNineYearsRadioButton.UseVisualStyleBackColor = true;
+            this.fiveToNineYearsRadioButton.CheckedChanged += new System.EventHandler(this.fiveToNineYearsRadioButton_CheckedChanged);
             // 
             // oneToFourYearsRadioButton
             // 
@@ -132,6 +136,7 @@
             this.oneToFourYearsRadioButton.Name = "oneToFourYearsRadioButton";
             this.oneToFourYearsRadioButton.TabStop = true;
             this.oneToFourYearsRadioButton.UseVisualStyleBackColor = true;
+            this.oneToFourYearsRadioButton.CheckedChanged += new System.EventHandler(this.oneToFourYearsRadioButton_CheckedChanged);
             // 
             // lessThanOneYearRadioButton
             // 
@@ -139,6 +144,7 @@
             this.lessThanOneYearRadioButton.Name = "lessThanOneYearRadioButton";
             this.lessThanOneYearRadioButton.TabStop = true;
             this.lessThanOneYearRadioButton.UseVisualStyleBackColor = true;
+            this.lessThanOneYearRadioButton.CheckedChanged += new System.EventHandler(this.lessThanOneYearRadioButton_CheckedChanged);
             // 
             // programmingLanguagesCheckedListBox
             // 
@@ -146,6 +152,7 @@
             this.programmingLanguagesCheckedListBox.FormattingEnabled = true;
             resources.ApplyResources(this.programmingLanguagesCheckedListBox, "programmingLanguagesCheckedListBox");
             this.programmingLanguagesCheckedListBox.Name = "programmingLanguagesCheckedListBox";
+            this.programmingLanguagesCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.programmingLanguagesCheckedListBox_SelectedIndexChanged);
             // 
             // resetButton
             // 
@@ -165,6 +172,7 @@
             // 
             resources.ApplyResources(this.schoolstartDateTimePicker, "schoolstartDateTimePicker");
             this.schoolstartDateTimePicker.Name = "schoolstartDateTimePicker";
+            this.schoolstartDateTimePicker.ValueChanged += new System.EventHandler(this.schoolstartDateTimePicker_ValueChanged);
             // 
             // schoolPictureBox
             // 
@@ -178,6 +186,7 @@
             resources.ApplyResources(this.allParticipantsListBox, "allParticipantsListBox");
             this.allParticipantsListBox.Name = "allParticipantsListBox";
             this.allParticipantsListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.allParticipantsListBox.DoubleClick += new System.EventHandler(this.allParticipantsListBox_DoubleClick);
             // 
             // deleteSelectedParticipants
             // 
